@@ -303,6 +303,7 @@
               </li>
             </ul>
           </li>
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-quote-left"></i>
@@ -326,6 +327,30 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-quote-left"></i>
+              <p>
+                Our Team
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('admin.team.create') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Our Team</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.team.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Our Team List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
           <li class="nav-item">
             <a href="{{ route('admin.land-owner.index') }}" class="nav-link">
               <i class="nav-icon fas fa-building"></i>

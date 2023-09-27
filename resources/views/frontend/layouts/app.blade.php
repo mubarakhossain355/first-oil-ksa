@@ -124,10 +124,10 @@
                         <li class="address item">{{ $settings->company_address }}</li>
                         @endif
                         @if ($settings->mobile)
-                        <li class="phone item">{{ $settings->mobile }}</li>
+                        <li class="phone item"><a href="">{{ $settings->mobile }}</a></li>
                         @endif
                         @if ($settings->email)
-                        <li class="email item">{{ $settings->email }}</li>
+                        <li class="email item"><a href="mailto:mail@example.com">{{ $settings->email }}</a></li>
                         @endif
                     </ul>
                 </div>

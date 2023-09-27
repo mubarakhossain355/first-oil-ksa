@@ -12,6 +12,7 @@ use App\Models\Category;
 use App\Models\Testimonial;
 use App\Models\WhyChooseUs;
 use App\Http\Controllers\Controller;
+use App\Models\Team;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         $testimonials = Testimonial::active()->latest()->get();
+        $teams = Team::active()->latest()->get();
         $whyChooseUs = WhyChooseUs::active()->latest()->take(6)->get();
         $news = News::active()->latest()->take(3)->get();
         $events = Event::active()->latest()->take(3)->get();
@@ -32,6 +34,6 @@ class HomeController extends Controller
         $projects = Project::with('type')->published()->whereIsFeatured(true)->orwhere('is_best', true)->latest()->take(9)->get();
         $settings = Setting::first();
 
-        return view('frontend.pages.home', compact('testimonials', 'whyChooseUs', 'news', 'events', 'sliders','categories','type', 'projects', 'settings'));
+        return view('frontend.pages.home', compact('testimonials','teams', 'whyChooseUs', 'news', 'events', 'sliders','categories','type', 'projects', 'settings'));
     }
 }

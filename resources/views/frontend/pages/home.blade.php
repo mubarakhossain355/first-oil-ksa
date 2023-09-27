@@ -809,6 +809,7 @@
                     </section>
 
                     <!-- TESTIMONIALS -->
+
                     <section id="testimonials" class="wprt-section">
                         <div class="container">
                             <div class="row">
@@ -828,82 +829,27 @@
                                 <div class="col-md-12">
                                     <div class="wprt-testimonials style-1 has-bullets bullet-style-1 bullet50" data-layout="slider" data-column="3" data-column2="3" data-column3="2" data-column4="1" data-gaph="30" data-gapv="30">
                                         <div id="testimonials-wrap" class="cbp">
+                                            @foreach ($testimonials as $testimonial)
                                             <div class="cbp-item">
                                                 <div class="customer clearfix">
                                                     <div class="inner">
-                                                        <div class="image"><img src="{{asset('/')}}assets/frontend/assets/img/testimonials/1.jpg" alt="image" /></div>
-                                                        <h4 class="name">GEORGE SLOWS</h4>
-                                                        <div class="position">Builder manager</div>
-                                                        <blockquote class="whisper">Vestibulum eu libero volutpat, portas quam acc, tempus sem. Donec sodales quam id lorem lobortis, vitae interdum nisl vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam suscipit, elit quis facilisis dictum, diam justo volutpat dui.</blockquote>
+                                                        @if ($testimonial->photo)
+                                                        <div class="image"><img src="{{ asset('storage/' . $testimonial->photo) }}" alt="{{ $testimonial->name }} - {{ config('app.name', 'Laravel') }}" /></div>
+                                                        @else
+                                                        <div class="image"><img src="{{asset('/')}}assets/frontend/assets/img/testimonials/1.jpg" alt="{{ $testimonial->name }} - {{ config('app.name', 'Laravel') }}" /></div>
+                                                        @endif
+                                                        <h4 class="name">{{ $testimonial->name }}</h4>
+                                                        @if ($testimonial->designation)
+                                                        <div class="position">{{ $testimonial->designation }} -
+                                                            {{ $testimonial->company }}</div>
+                                                        @endif
+                                                        <blockquote class="whisper">{{ $testimonial->testimonial }}</blockquote>
                                                     </div>
                                                 </div>
                                             </div><!-- /.cbp-item -->
 
-                                            <div class="cbp-item">
-                                                <div class="customer clearfix">
-                                                    <div class="inner">
-                                                        <div class="image"><img src="{{asset('/')}}assets/frontend/assets/img/testimonials/2.jpg" alt="image" /></div>
-                                                        <h4 class="name">BARBARA DOUGLAS</h4>
-                                                        <div class="position">Builder manager</div>
-                                                        <blockquote class="whisper">Vestibulum eu libero volutpat, portas quam acc, tempus sem. Donec sodales quam id lorem lobortis, vitae interdum nisl vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam suscipit, elit quis facilisis dictum, diam justo volutpat dui.</blockquote>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.cbp-item -->
+                                          @endforeach
 
-                                            <div class="cbp-item">
-                                                <div class="customer clearfix">
-                                                    <div class="inner">
-                                                        <div class="image"><img src="{{asset('/')}}assets/frontend/assets/img/testimonials/3.jpg" alt="image" /></div>
-                                                        <h4 class="name">GEORGE SLOWS</h4>
-                                                        <div class="position">Builder manager</div>
-                                                        <blockquote class="whisper">Vestibulum eu libero volutpat, portas quam acc, tempus sem. Donec sodales quam id lorem lobortis, vitae interdum nisl vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam suscipit, elit quis facilisis dictum, diam justo volutpat dui.</blockquote>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.cbp-item -->
-
-                                            <div class="cbp-item">
-                                                <div class="customer clearfix">
-                                                    <div class="inner">
-                                                        <div class="image"><img src="{{asset('/')}}assets/frontend/assets/img/testimonials/1.jpg" alt="image" /></div>
-                                                        <h4 class="name">GEORGE SLOWS</h4>
-                                                        <div class="position">Builder manager</div>
-                                                        <blockquote class="whisper">Vestibulum eu libero volutpat, portas quam acc, tempus sem. Donec sodales quam id lorem lobortis, vitae interdum nisl vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam suscipit, elit quis facilisis dictum, diam justo volutpat dui.</blockquote>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.cbp-item -->
-
-                                            <div class="cbp-item">
-                                                <div class="customer clearfix">
-                                                    <div class="inner">
-                                                        <div class="image"><img src="{{asset('/')}}assets/frontend/assets/img/testimonials/2.jpg" alt="image" /></div>
-                                                        <h4 class="name">GEORGE SLOWS</h4>
-                                                        <div class="position">Builder manager</div>
-                                                        <blockquote class="whisper">Vestibulum eu libero volutpat, portas quam acc, tempus sem. Donec sodales quam id lorem lobortis, vitae interdum nisl vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam suscipit, elit quis facilisis dictum, diam justo volutpat dui.</blockquote>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.cbp-item -->
-
-                                            <div class="cbp-item">
-                                                <div class="customer clearfix">
-                                                    <div class="inner">
-                                                        <div class="image"><img src="{{asset('/')}}assets/frontend/assets/img/testimonials/3.jpg" alt="image" /></div>
-                                                        <h4 class="name">GEORGE SLOWS</h4>
-                                                        <div class="position">Builder manager</div>
-                                                        <blockquote class="whisper">Vestibulum eu libero volutpat, portas quam acc, tempus sem. Donec sodales quam id lorem lobortis, vitae interdum nisl vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam suscipit, elit quis facilisis dictum, diam justo volutpat dui.</blockquote>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.cbp-item -->
-
-                                            <div class="cbp-item">
-                                                <div class="customer clearfix">
-                                                    <div class="inner">
-                                                        <div class="image"><img src="{{asset('/')}}assets/frontend/assets/img/testimonials/1.jpg" alt="image" /></div>
-                                                        <h4 class="name">GEORGE SLOWS</h4>
-                                                        <div class="position">Builder manager</div>
-                                                        <blockquote class="whisper">Vestibulum eu libero volutpat, portas quam acc, tempus sem. Donec sodales quam id lorem lobortis, vitae interdum nisl vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam suscipit, elit quis facilisis dictum, diam justo volutpat dui.</blockquote>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.cbp-item -->
                                         </div><!-- /#service-wrap -->
                                     </div><!-- /.wprt-testimonials -->
 
@@ -923,31 +869,19 @@
 
                                 <div class="col-md-6 no-padding">
                                     <div class="wprt-content-box style-2">
-                                        <h2 class="margin-bottom-20">WHY CHOOSE US?</h2>
+                                        <h2 class="margin-bottom-20"> {{ Str::upper($settings->why_choose_us_title) }}</h2>
                                         <div class="wprt-lines style-1 custom-2">
                                             <div class="line-1"></div>
                                         </div>
                                         <div class="wprt-spacer" data-desktop="50" data-mobi="30" data-smobi="30"></div>
-
+                                        @foreach ($whyChooseUs as $item)
                                         <div class="wprt-toggle bg-white style-1">
-                                            <h3 class="toggle-title">Employees have many years of experience</h3>
-                                            <div class="toggle-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a metus pellentesque, scelerisque ex sed, volutpat nisi. Curabitur tortor mi, eleifend ornare lobortis non. Nulla porta purus quis iaculis ultrices. Proin aliquam sem at nibh hendrerit sagittis. Nullam ornare odio eu lacus tincidunt malesuada. Sed eu vestibulum elit. Curabitur tortor mi, eleifend ornare.</div>
+                                            <h3 class="toggle-title">{{ $item->title }}</h3>
+                                            <div class="toggle-content">{{ $item->description }}</div>
                                         </div>
+                                        @endforeach
+                                        
 
-                                        <div class="wprt-toggle bg-white active style-1">
-                                            <h3 class="toggle-title">Quality construction continues after the project</h3>
-                                            <div class="toggle-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a metus pellentesque, scelerisque ex sed, volutpat nisi. Curabitur tortor mi, eleifend ornare lobortis non. Nulla porta purus quis iaculis ultrices. Proin aliquam sem at nibh hendrerit sagittis. Nullam ornare odio eu lacus tincidunt malesuada. Sed eu vestibulum elit. Curabitur tortor mi, eleifend ornare.</div>
-                                        </div>
-
-                                        <div class="wprt-toggle bg-white style-1">
-                                            <h3 class="toggle-title">We use technology to do the job more quickly</h3>
-                                            <div class="toggle-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a metus pellentesque, scelerisque ex sed, volutpat nisi. Curabitur tortor mi, eleifend ornare lobortis non. Nulla porta purus quis iaculis ultrices. Proin aliquam sem at nibh hendrerit sagittis. Nullam ornare odio eu lacus tincidunt malesuada. Sed eu vestibulum elit. Curabitur tortor mi, eleifend ornare.</div>
-                                        </div>
-
-                                        <div class="wprt-toggle bg-white style-1">
-                                            <h3 class="toggle-title">Employees are continually trained on safety issues</h3>
-                                            <div class="toggle-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a metus pellentesque, scelerisque ex sed, volutpat nisi. Curabitur tortor mi, eleifend ornare lobortis non. Nulla porta purus quis iaculis ultrices. Proin aliquam sem at nibh hendrerit sagittis. Nullam ornare odio eu lacus tincidunt malesuada. Sed eu vestibulum elit. Curabitur tortor mi, eleifend ornare.</div>
-                                        </div>
                                     </div><!-- /.wprt-content-box -->
                                 </div><!-- /.col-md-6 -->
                             </div><!-- /.row -->
@@ -973,186 +907,44 @@
 
                                     <div class="wprt-team has-bullets bullet-style-1" data-layout="slider" data-column="4" data-column2="3" data-column3="2" data-column4="1" data-gaph="30" data-gapv="30">
                                         <div id="team-wrap" class="cbp">
+
+                                            @foreach ($teams as $team)
                                             <div class="cbp-item">
                                                 <div class="member">
                                                     <div class="inner">
                                                         <div class="image">
+                                                            @if ($testimonial->photo)
                                                             <div class="inner">
-                                                                <img src="{{asset('/')}}assets/frontend/assets/img/team/1.jpg" alt="image" />
+                                                                <img src="{{ asset('storage/' . $team->photo) }}" alt="{{ $team->name }} - {{ config('app.name', 'Laravel') }}" />
                                                             </div>
+                                                            @else
+                                                            <div class="inner">
+                                                                <img src="{{asset('/')}}assets/frontend/assets/img/team/1.jpg" alt="{{ $team->name }} - {{ config('app.name', 'Laravel') }}" />
+                                                            </div>
+                                                            @endif
                                                              <ul class="socials clearfix">
-                                                                <li class="twitter"><a target="_blank" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                                <li class="google-plus"><a target="_blank" href="#"><i class="fa fa-google-plus"></i></a></li>
-                                                                <li class="linkedin"><a target="_blank" href="#"><i class="fa fa-linkedin"></i></a></li>
+                                                                @if ($team->facebook_url)
+                                                                <li class="twitter"><a target="_blank" href="{{$team->facebook_url}}"><i class="fa fa-twitter"></i></a></li>
+                                                                @endif
+                                                                @if ($team->email_url)
+                                                                <li class="google-plus"><a target="_blank" href="{{$team->email_url}}"><i class="fa fa-google-plus"></i></a></li>
+                                                                @endif
+                                                                @if ($team->linkedin_url)
+                                                                <li class="linkedin"><a target="_blank" href="{{$team->linkedin_url}}"><i class="fa fa-linkedin"></i></a></li>
+                                                                @endif
                                                              </ul>
                                                         </div>
                                                         <div class="texts">
-                                                            <h4 class="name">Richard Wagner</h4>
-                                                            <div class="position">Civil Engineer</div>
+                                                            <h4 class="name">{{$team->name}}</h4>
+                                                            <div class="position">{{$team->designation}} - {{$team->company}}</div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="cbp-item">
-                                                <div class="member">
-                                                    <div class="inner">
-                                                        <div class="image">
-                                                            <div class="inner">
-                                                                <img src="{{asset('/')}}assets/frontend/assets/img/team/2.jpg" alt="image" />
-                                                            </div>
-                                                             <ul class="socials clearfix">
-                                                                <li class="facebook"><a target="_blank" href="#"><i class="fa fa-facebook"></i></a></li>
-                                                                <li class="twitter"><a target="_blank" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                                <li class="google-plus"><a target="_blank" href="#"><i class="fa fa-google-plus"></i></a></li>
-                                                             </ul>
-                                                        </div>
-                                                        <div class="texts">
-                                                            <h4 class="name">Sarah Spence</h4>
-                                                            <div class="position">Construction Assistant</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="cbp-item">
-                                                <div class="member">
-                                                    <div class="inner">
-                                                        <div class="image">
-                                                            <div class="inner">
-                                                                <img src="{{asset('/')}}assets/frontend/assets/img/team/3.jpg" alt="image" />
-                                                            </div>
-                                                             <ul class="socials clearfix">
-                                                                <li class="facebook"><a target="_blank" href="#"><i class="fa fa-facebook"></i></a></li>
-                                                                <li class="twitter"><a target="_blank" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                                <li class="google-plus"><a target="_blank" href="#"><i class="fa fa-google-plus"></i></a></li>
-                                                             </ul>
-                                                        </div>
-                                                        <div class="texts">
-                                                            <h4 class="name">John Halpern</h4>
-                                                            <div class="position">Construction Manager</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="cbp-item">
-                                                <div class="member">
-                                                    <div class="inner">
-                                                        <div class="image">
-                                                            <div class="inner">
-                                                                <img src="{{asset('/')}}assets/frontend/assets/img/team/4.jpg" alt="image" />
-                                                            </div>
-                                                             <ul class="socials clearfix">
-                                                                <li class="facebook"><a target="_blank" href="#"><i class="fa fa-facebook"></i></a></li>
-                                                                <li class="google-plus"><a target="_blank" href="#"><i class="fa fa-google-plus"></i></a></li>
-                                                                <li class="linkedin"><a target="_blank" href="#"><i class="fa fa-linkedin"></i></a></li>
-                                                             </ul>
-                                                        </div>
-                                                        <div class="texts">
-                                                            <h4 class="name">Tommy Atkins</h4>
-                                                            <div class="position">Electricians</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="cbp-item">
-                                                <div class="member">
-                                                    <div class="inner">
-                                                        <div class="image">
-                                                            <div class="inner">
-                                                                <img src="{{asset('/')}}assets/frontend/assets/img/team/1.jpg" alt="image" />
-                                                            </div>
-                                                             <ul class="socials clearfix">
-                                                                <li class="facebook"><a target="_blank" href="#"><i class="fa fa-facebook"></i></a></li>
-                                                                <li class="twitter"><a target="_blank" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                                <li class="google-plus"><a target="_blank" href="#"><i class="fa fa-google-plus"></i></a></li>
-                                                             </ul>
-                                                        </div>
-                                                        <div class="texts">
-                                                            <h4 class="name">John Joe</h4>
-                                                            <div class="position">Junior Architect</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="cbp-item">
-                                                <div class="member">
-                                                    <div class="inner">
-                                                        <div class="image">
-                                                            <div class="inner">
-                                                                <img src="{{asset('/')}}assets/frontend/assets/img/team/2.jpg" alt="image" />
-                                                            </div>
-                                                             <ul class="socials clearfix">
-                                                                <li class="twitter"><a target="_blank" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                                <li class="google-plus"><a target="_blank" href="#"><i class="fa fa-google-plus"></i></a></li>
-                                                                <li class="linkedin"><a target="_blank" href="#"><i class="fa fa-linkedin"></i></a></li>
-                                                             </ul>
-                                                        </div>
-                                                        <div class="texts">
-                                                            <h4 class="name">Richard Wagner</h4>
-                                                            <div class="position">Civil Engineer</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="cbp-item">
-                                                <div class="member">
-                                                    <div class="inner">
-                                                        <div class="image">
-                                                            <div class="inner">
-                                                                <img src="{{asset('/')}}assets/frontend/assets/img/team/3.jpg" alt="image" />
-                                                            </div>
-                                                             <ul class="socials clearfix">
-                                                                <li class="facebook"><a target="_blank" href="#"><i class="fa fa-facebook"></i></a></li>
-                                                                <li class="twitter"><a target="_blank" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                                <li class="google-plus"><a target="_blank" href="#"><i class="fa fa-google-plus"></i></a></li>
-                                                             </ul>
-                                                        </div>
-                                                        <div class="texts">
-                                                            <h4 class="name">Sarah Spence</h4>
-                                                            <div class="position">Construction Assistant</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="cbp-item">
-                                                <div class="member">
-                                                    <div class="inner">
-                                                        <div class="image">
-                                                            <div class="inner">
-                                                                <img src="{{asset('/')}}assets/frontend/assets/img/team/4.jpg" alt="image" />
-                                                            </div>
-                                                             <ul class="socials clearfix">
-                                                                <li class="facebook"><a target="_blank" href="#"><i class="fa fa-facebook"></i></a></li>
-                                                                <li class="twitter"><a target="_blank" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                                <li class="google-plus"><a target="_blank" href="#"><i class="fa fa-google-plus"></i></a></li>
-                                                             </ul>
-                                                        </div>
-                                                        <div class="texts">
-                                                            <h4 class="name">John Halpern</h4>
-                                                            <div class="position">Construction Manager</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="cbp-item">
-                                                <div class="member">
-                                                    <div class="inner">
-                                                        <div class="image">
-                                                            <div class="inner">
-                                                                <img src="{{asset('/')}}assets/frontend/assets/img/team/1.jpg" alt="image" />
-                                                            </div>
-                                                             <ul class="socials clearfix">
-                                                                <li class="facebook"><a target="_blank" href="#"><i class="fa fa-facebook"></i></a></li>
-                                                                <li class="google-plus"><a target="_blank" href="#"><i class="fa fa-google-plus"></i></a></li>
-                                                                <li class="linkedin"><a target="_blank" href="#"><i class="fa fa-linkedin"></i></a></li>
-                                                             </ul>
-                                                        </div>
-                                                        <div class="texts">
-                                                            <h4 class="name">Tommy Atkins</h4>
-                                                            <div class="position">Electricians</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            </div> 
+                                            @endforeach
+                                            
+
+                                            
                                         </div><!-- /#team-wrap -->
                                     </div><!-- /.wprt-team -->
 

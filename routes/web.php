@@ -52,6 +52,8 @@ Route::group(['as'=>'admin.', 'prefix'=>'admin', 'middleware'=>['auth']], functi
     Route::resource('project', App\Http\Controllers\Backend\ProjectController::class);
     Route::resource('setting', App\Http\Controllers\Backend\SettingController::class);
     Route::resource('why-choose-us', App\Http\Controllers\Backend\WhyChooseUsController::class);
+    // Add
+    Route::resource('team', App\Http\Controllers\Backend\TeamController::class);
 
     Route::get('client-requirement/{clientRequirement}', [App\Http\Controllers\Backend\ClientRequirementController::class, 'updateStatus'])->name('client-requirement.status.update');
     Route::get('client-requirement', [App\Http\Controllers\Backend\ClientRequirementController::class, 'index'])->name('client-requirement.index');
