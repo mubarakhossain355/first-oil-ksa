@@ -92,205 +92,8 @@
                 @endforeach
                
 
-
-
                 <!-- End Slide -->
 
-                {{-- <!-- Slide -->
-                <li data-transition="boxfade" data-slotamount="7" data-easein="Expo.easeOut" data-easeout="Expo.easeOut" data-masterspeed="2000" data-thumb="assets/img/slider/2.jpg" data-rotate="0" data-saveperformance="off" data-title="BEST COMPANY">
-                    <!-- Main Image -->
-                    <img src="{{asset('/')}}assets/frontend/assets/img/slider/2.jpg" alt="" data-bgposition="center center" data-no-retina>
-                    <!-- Layers -->
-                    <div class="tp-caption tp-resizeme text-white font-family-heading text-shadow font-weight-500"
-                        data-x="['left','left','left','left']" data-hoffset="['50','30','30','30']"
-                        data-y="['middle','middle','middle','middle']" data-voffset="['-100','-90','-80','-70']"
-                        data-fontsize="['60','50','40','30']"
-                        data-lineheight="['70','60','50','40']"
-                        data-width="none"
-                        data-height="none"
-                        data-whitespace="nowrap"
-                        data-transform_idle="o:1;"
-                        data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;"
-                        data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
-                        data-mask_in="x:0px;y:0px;"
-                        data-mask_out="x:inherit;y:inherit;"
-                        data-start="1500"
-                        data-splitin="none"
-                        data-splitout="none"
-                        data-responsive_offset="on">
-                        THE BEST COMPANY
-                    </div>
-                    <div class="tp-caption tp-resizeme text-white text-shadow"
-                        data-x="['left','left','left','left']" data-hoffset="['55','30','30','30']"
-                        data-y="['middle','middle','middle','middle']" data-voffset="['-20','-20','-20','-20']"
-                        data-fontsize="['20','18','16','14']"
-                        data-lineheight="['30','28','26','24']"
-                        data-width="none"
-                        data-height="none"
-                        data-whitespace="nowrap"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                        data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
-                        data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                        data-mask_out="x:0;y:0;s:inherit;e:inherit;"
-                        data-start="1000"
-                        data-splitin="none"
-                        data-splitout="none"
-                        data-responsive_offset="on"
-                        data-lasttriggerstate="reset">
-                        We are professional company over 20 year of experience.<br>We will brighten up every corner of your house.
-                    </div>
-                    <div class="tp-caption"
-                        data-x="['left','left','left','left']" data-hoffset="['55','30','30','30']"
-                        data-y="['middle','middle','middle','middle']" data-voffset="['80','70','60','50']"
-                        data-width="none"
-                        data-height="none"
-                        data-whitespace="nowrap"
-                        data-transform_idle="o:1;"
-                        data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
-                        data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
-                        data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;"
-                        data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                        data-start="1250"
-                        data-splitin="none"
-                        data-splitout="none"
-                        data-actions='[{"event":"click","action":"scrollbelow","offset":"20px"}]'
-                        data-responsive="on">
-                        <a class="wprt-button big rounded-3px">CONTACT US</a>
-                    </div>
-                </li>
-                <!-- End Slide -->
-                <!-- Slide -->
-                <li data-transition="boxfade" data-slotamount="7" data-easein="Expo.easeOut" data-easeout="Expo.easeOut" data-masterspeed="2000" data-thumb="assets/img/slider/2.jpg" data-rotate="0" data-saveperformance="off" data-title="BEST COMPANY">
-                    <!-- Main Image -->
-                    <img src="{{asset('/')}}assets/frontend/assets/img/slider/3.jpg" alt="" data-bgposition="center center" data-no-retina>
-                    <!-- Layers -->
-                    <div class="tp-caption tp-resizeme text-white font-family-heading text-shadow font-weight-500"
-                        data-x="['left','left','left','left']" data-hoffset="['50','30','30','30']"
-                        data-y="['middle','middle','middle','middle']" data-voffset="['-100','-90','-80','-70']"
-                        data-fontsize="['60','50','40','30']"
-                        data-lineheight="['70','60','50','40']"
-                        data-width="none"
-                        data-height="none"
-                        data-whitespace="nowrap"
-                        data-transform_idle="o:1;"
-                        data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;"
-                        data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
-                        data-mask_in="x:0px;y:0px;"
-                        data-mask_out="x:inherit;y:inherit;"
-                        data-start="1500"
-                        data-splitin="none"
-                        data-splitout="none"
-                        data-responsive_offset="on">
-                        THE BEST COMPANY
-                    </div>
-                    <div class="tp-caption tp-resizeme text-white text-shadow"
-                        data-x="['left','left','left','left']" data-hoffset="['55','30','30','30']"
-                        data-y="['middle','middle','middle','middle']" data-voffset="['-20','-20','-20','-20']"
-                        data-fontsize="['20','18','16','14']"
-                        data-lineheight="['30','28','26','24']"
-                        data-width="none"
-                        data-height="none"
-                        data-whitespace="nowrap"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                        data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
-                        data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                        data-mask_out="x:0;y:0;s:inherit;e:inherit;"
-                        data-start="1000"
-                        data-splitin="none"
-                        data-splitout="none"
-                        data-responsive_offset="on"
-                        data-lasttriggerstate="reset">
-                        We are professional company over 20 year of experience.<br>We will brighten up every corner of your house.
-                    </div>
-                    <div class="tp-caption"
-                        data-x="['left','left','left','left']" data-hoffset="['55','30','30','30']"
-                        data-y="['middle','middle','middle','middle']" data-voffset="['80','70','60','50']"
-                        data-width="none"
-                        data-height="none"
-                        data-whitespace="nowrap"
-                        data-transform_idle="o:1;"
-                        data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
-                        data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
-                        data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;"
-                        data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                        data-start="1250"
-                        data-splitin="none"
-                        data-splitout="none"
-                        data-actions='[{"event":"click","action":"scrollbelow","offset":"20px"}]'
-                        data-responsive="on">
-                        <a class="wprt-button big rounded-3px">CONTACT US</a>
-                    </div>
-                </li>
-                <!-- End Slide -->
-                <!-- Slide -->
-                <li data-transition="boxfade" data-slotamount="7" data-easein="Expo.easeOut" data-easeout="Expo.easeOut" data-masterspeed="2000" data-thumb="assets/img/slider/2.jpg" data-rotate="0" data-saveperformance="off" data-title="BEST COMPANY">
-                    <!-- Main Image -->
-                    <img src="{{asset('/')}}assets/frontend/assets/img/slider/4.jpg" alt="" data-bgposition="center center" data-no-retina>
-                    <!-- Layers -->
-                    <div class="tp-caption tp-resizeme text-white font-family-heading text-shadow font-weight-500"
-                        data-x="['left','left','left','left']" data-hoffset="['50','30','30','30']"
-                        data-y="['middle','middle','middle','middle']" data-voffset="['-100','-90','-80','-70']"
-                        data-fontsize="['60','50','40','30']"
-                        data-lineheight="['70','60','50','40']"
-                        data-width="none"
-                        data-height="none"
-                        data-whitespace="nowrap"
-                        data-transform_idle="o:1;"
-                        data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;"
-                        data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
-                        data-mask_in="x:0px;y:0px;"
-                        data-mask_out="x:inherit;y:inherit;"
-                        data-start="1500"
-                        data-splitin="none"
-                        data-splitout="none"
-                        data-responsive_offset="on">
-                        THE BEST COMPANY
-                    </div>
-                    <div class="tp-caption tp-resizeme text-white text-shadow"
-                        data-x="['left','left','left','left']" data-hoffset="['55','30','30','30']"
-                        data-y="['middle','middle','middle','middle']" data-voffset="['-20','-20','-20','-20']"
-                        data-fontsize="['20','18','16','14']"
-                        data-lineheight="['30','28','26','24']"
-                        data-width="none"
-                        data-height="none"
-                        data-whitespace="nowrap"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                        data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
-                        data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                        data-mask_out="x:0;y:0;s:inherit;e:inherit;"
-                        data-start="1000"
-                        data-splitin="none"
-                        data-splitout="none"
-                        data-responsive_offset="on"
-                        data-lasttriggerstate="reset">
-                        We are professional company over 20 year of experience.<br>We will brighten up every corner of your house.
-                    </div>
-                    <div class="tp-caption"
-                        data-x="['left','left','left','left']" data-hoffset="['55','30','30','30']"
-                        data-y="['middle','middle','middle','middle']" data-voffset="['80','70','60','50']"
-                        data-width="none"
-                        data-height="none"
-                        data-whitespace="nowrap"
-                        data-transform_idle="o:1;"
-                        data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
-                        data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
-                        data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeInOut;"
-                        data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                        data-start="1250"
-                        data-splitin="none"
-                        data-splitout="none"
-                        data-actions='[{"event":"click","action":"scrollbelow","offset":"20px"}]'
-                        data-responsive="on">
-                        <a class="wprt-button big rounded-3px">CONTACT US</a>
-                    </div>
-                </li>
-                <!-- End Slide --> --}}
 
             </ul>
             <div class="tp-bannertimer tp-bottom"></div>
@@ -306,52 +109,40 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="wprt-spacer" data-desktop="110" data-mobi="40" data-smobi="40"></div>
+                                    <div class="wprt-spacer" data-desktop="100" data-mobi="40" data-smobi="40"></div>
+
+                                    <h2 class="text-center margin-bottom-20">Our Services</h2>
+                                    <div class="wprt-lines style-2 custom-1">
+                                        <div class="line-1"></div>
+                                    </div>
+
+                                    <div class="wprt-spacer" data-desktop="36" data-mobi="30" data-smobi="30"></div>
                                 </div><!-- /.col-md-12 -->
-
+                                @foreach ($services as $service)
                                 <div class="col-md-4">
 
                                     <div class="service-item clearfix text-center">
-                                        <div class="thumb"><img src="{{asset('/')}}assets/frontend/assets/img/services/4.jpg" alt="image" /></div>
+                                        @if ($service->featured_image)
+                                        <div class="thumb"><img src="{{ asset('storage/' . $service->featured_image) }}" alt="{{ $service->title }} - {{ config('app.name', 'Laravel') }}" /></div> 
+                                        @else
+                                        <div class="thumb"><img src="{{asset('/')}}assets/frontend/assets/img/services/4.jpg" alt="{{ $service->title }} - {{ config('app.name', 'Laravel') }}" /></div> 
+                                        @endif
+                                        
                                         <div class="service-item-wrap">
-                                            <h3 class="title font-size-18"><a href="#">Construction Consultant</a></h3>
-                                            <p class="desc">Sed sit amet sapien sit amet odio lobortis ullamcorper quis vel nisl. Nam blandit maximus tristique. Vivamus enim quam, tincidunt vel blandit eu, molestie eget arcu.</p>
+                                            <h3 class="title font-size-18"><a href="#">{{$service->title}}</a></h3>
+                                            <p class="desc">{{$service->short_description}}</p>
                                             <div class="link">
-                                                <a href="#" class="wprt-button small rounded-3px">READ MORE</a>
+                                                <a href="{{ route('service.details', [$service->id, Str::slug($service->title)]) }}" class="wprt-button small rounded-3px">READ MORE</a>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="wprt-spacer" data-desktop="0" data-mobi="40" data-smobi="40"></div>
                                 </div><!-- /.col-md-4 -->
+                                @endforeach
+                               
 
-                                <div class="col-md-4">
-                                    <div class="service-item clearfix text-center">
-                                        <div class="thumb"><img src="{{asset('/')}}assets/frontend/assets/img/services/5.jpg" alt="image" /></div>
-                                        <div class="service-item-wrap">
-                                            <h3 class="title font-size-18"><a href="#">Resconstruction Services</a></h3>
-                                            <p class="desc">Sed sit amet sapien sit amet odio lobortis ullamcorper quis vel nisl. Nam blandit maximus tristique. Vivamus enim quam, tincidunt vel blandit eu, molestie eget arcu.</p>
-                                            <div class="link">
-                                                <a href="#" class="wprt-button small rounded-3px">READ MORE</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="wprt-spacer" data-desktop="0" data-mobi="40" data-smobi="40"></div>
-                                </div><!-- /.col-md-4 -->
-
-                                <div class="col-md-4">
-                                    <div class="service-item clearfix text-center">
-                                        <div class="thumb"><img src="{{asset('/')}}assets/frontend/assets/img/services/6.jpg" alt="image" /></div>
-                                        <div class="service-item-wrap">
-                                            <h3 class="title font-size-18"><a href="#">Architectural Design</a></h3>
-                                            <p class="desc">Sed sit amet sapien sit amet odio lobortis ullamcorper quis vel nisl. Nam blandit maximus tristique. Vivamus enim quam, tincidunt vel blandit eu, molestie eget.</p>
-                                            <div class="link">
-                                                <a href="#" class="wprt-button small rounded-3px">READ MORE</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!-- /.col-md-4 -->
+                               
 
                                 <div class="col-md-12">
                                     <div class="wprt-spacer" data-desktop="110" data-mobi="40" data-smobi="40"></div>
@@ -437,24 +228,7 @@
                                     <span>{{$category->name}}</span>
                                 </div>
                                 @endforeach
-                                
-{{-- 
-                                <div data-filter=".building" class="cbp-filter-item">
-                                    <span>Building</span>
-                                </div>
-                                <div data-filter=".garden" class="cbp-filter-item">
-                                    <span>Garden</span>
-                                </div>
-                                <div data-filter=".interior" class="cbp-filter-item">
-                                    <span>Interior</span>
-                                </div>
-                                <div data-filter=".office" class="cbp-filter-item">
-                                    <span>Office</span>
-                                </div>
-                                <div data-filter=".workspace" class="cbp-filter-item">
-                                    <span>Workspace</span>
-                                </div> --}}
-
+ 
 
                             </div><!-- /#project-filter -->
 
@@ -486,161 +260,6 @@
                 @endforelse
                                 <!--/.cbp-item -->
 
-
-{{--                                 
-                                <div class="cbp-item building office workspace">
-                                    <div class="project-item">
-                                        <div class="inner">
-                                            <div class="grid">
-                                            <figure class="effect-honey">
-                                                <img src="{{asset('/')}}assets/frontend/assets/img/projects/2.jpg" alt="image" />
-                                                <figcaption>
-                                                    <div>
-                                                        <h2><a target="_blank" href="page-project-detail.html">LUXURY BUILDINGS</a></h2>
-                                                        <p>Construction</p>
-                                                    </div>
-                                                </figcaption>           
-                                            </figure>
-                                            </div>
-
-                                            <a class="project-zoom cbp-lightbox" href="assets/img/projects/2-full.html" data-title="LUXURY BUILDINGS">
-                                                <i class="fa fa-arrows-alt"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!--/.cbp-item -->
-
-                                <div class="cbp-item architecture garden interior">
-                                    <div class="project-item">
-                                        <div class="inner">
-                                            <div class="grid">
-                                            <figure class="effect-oscar">
-                                                <img src="{{asset('/')}}assets/frontend/assets/img/projects/3.jpg" alt="image" />
-                                                <figcaption>
-                                                    <div>
-                                                        <h2><a target="_blank" href="page-project-detail.html">LUXURY BUILDINGS</a></h2>
-                                                        <p>Construction</p>
-                                                    </div>
-                                                </figcaption>           
-                                            </figure>
-                                            </div>
-
-                                            <a class="project-zoom cbp-lightbox" href="assets/img/projects/3-full.html" data-title="LUXURY BUILDINGS">
-                                                <i class="fa fa-arrows-alt"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!--/.cbp-item -->
-
-                                <div class="cbp-item building interior workspace">
-                                    <div class="project-item">
-                                        <div class="inner">
-                                            <div class="grid">
-                                            <figure class="effect-sadie">
-                                                <img src="{{asset('/')}}assets/frontend/assets/img/projects/4.jpg" alt="image" />
-                                                <figcaption>
-                                                    <div>
-                                                        <h2><a target="_blank" href="page-project-detail.html">LUXURY BUILDINGS</a></h2>
-                                                        <p>Construction</p>
-                                                    </div>
-                                                </figcaption>           
-                                            </figure>
-                                            </div>
-
-                                            <a class="project-zoom cbp-lightbox" href="assets/img/projects/4-full.html" data-title="LUXURY BUILDINGS">
-                                                <i class="fa fa-arrows-alt"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!--/.cbp-item -->
-
-                                <div class="cbp-item garden office workspace">
-                                    <div class="project-item">
-                                        <div class="inner">
-                                            <div class="grid">
-                                            <figure class="effect-zoe">
-                                                <img src="{{asset('/')}}assets/frontend/assets/img/projects/5.jpg" alt="image" />
-                                                <figcaption>
-                                                    <div>
-                                                        <h2><a target="_blank" href="page-project-detail.html">LUXURY BUILDINGS</a></h2>
-                                                        <p>Construction</p>
-                                                    </div>
-                                                </figcaption>           
-                                            </figure>
-                                            </div>
-
-                                            <a class="project-zoom cbp-lightbox" href="assets/img/projects/5-full.html" data-title="LUXURY BUILDINGS">
-                                                <i class="fa fa-arrows-alt"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!--/.cbp-item -->
-
-                                <div class="cbp-item architecture garden office">
-                                    <div class="project-item">
-                                        <div class="inner">
-                                            <div class="grid">
-                                            <figure class="effect-honey">
-                                                <img src="{{asset('/')}}assets/frontend/assets/img/projects/6.jpg" alt="image" />
-                                                <figcaption>
-                                                    <div>
-                                                        <h2><a target="_blank" href="page-project-detail.html">LUXURY BUILDINGS</a></h2>
-                                                        <p>Construction</p>
-                                                    </div>
-                                                </figcaption>           
-                                            </figure>
-                                            </div>
-
-                                            <a class="project-zoom cbp-lightbox" href="assets/img/projects/6-full.html" data-title="LUXURY BUILDINGS">
-                                                <i class="fa fa-arrows-alt"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!--/.cbp-item -->
-
-                                <div class="cbp-item architecture garden office">
-                                    <div class="project-item">
-                                        <div class="inner">
-                                            <div class="grid">
-                                            <figure class="effect-oscar">
-                                                <img src="{{asset('/')}}assets/frontend/assets/img/projects/7.jpg" alt="image" />
-                                                <figcaption>
-                                                    <div>
-                                                        <h2><a target="_blank" href="page-project-detail.html">LUXURY BUILDINGS</a></h2>
-                                                        <p>Construction</p>
-                                                    </div>
-                                                </figcaption>           
-                                            </figure>
-                                            </div>
-
-                                            <a class="project-zoom cbp-lightbox" href="assets/img/projects/7-full.html" data-title="LUXURY BUILDINGS">
-                                                <i class="fa fa-arrows-alt"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!--/.cbp-item -->
-
-                                <div class="cbp-item architecture garden office">
-                                    <div class="project-item">
-                                        <div class="inner">
-                                            <div class="grid">
-                                            <figure class="effect-sadie">
-                                                <img src="{{asset('/')}}assets/frontend/assets/img/projects/8.jpg" alt="image" />
-                                                <figcaption>
-                                                    <div>
-                                                        <h2><a target="_blank" href="page-project-detail.html">LUXURY BUILDINGS</a></h2>
-                                                        <p>Construction</p>
-                                                    </div>
-                                                </figcaption>           
-                                            </figure>
-                                            </div>
-
-                                            <a class="project-zoom cbp-lightbox" href="assets/img/projects/8-full.html" data-title="LUXURY BUILDINGS">
-                                                <i class="fa fa-arrows-alt"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!--/.cbp-item --> --}}
 
 
                             </div><!-- /#projects -->

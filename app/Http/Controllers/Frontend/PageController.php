@@ -17,6 +17,7 @@ use App\Models\LandOwner;
 use Illuminate\Http\Request;
 use App\Models\ClientRequirement;
 use App\Http\Controllers\Controller;
+use App\Models\Service;
 
 class PageController extends Controller
 {
@@ -153,6 +154,18 @@ class PageController extends Controller
         $project = Project::find($id);
 
         return view('frontend.pages.project-details', compact('project'));
+    }
+
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function serviceDetails($id)
+    {
+        $service = Service::find($id);
+
+        return view('frontend.pages.service-details', compact('service'));
     }
 
     /**

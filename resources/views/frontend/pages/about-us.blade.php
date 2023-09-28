@@ -3,31 +3,63 @@
 @section('title', 'About Us Page')
 
 @section('content')
-    <section
-        style="margin: 0; background-image: url({{ asset('storage/' . $settings->breadcrub_image) }});background-attachment: fixed;background-size: cover;background-position: center;background-repeat: no-repeat;"
-        class="page-header page-header-modern bg-color-light-scale-1 page-header-lg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 align-self-center p-static order-2 text-center">
-                    <h1 class="font-weight-bold text-light ">{{ $aboutUs->page_title }}</h1>
-                </div>
-                <div class="col-md-12 align-self-center order-1">
-                    <ul class="breadcrumb d-block text-center text-light">
-                        <li><a class="text-light" href="{{ route('home') }}">Home</a></li>
-                        <li class="active">About Us</li>
-                    </ul>
-                </div>
+   <!-- Featured Title -->
+<div id="featured-title" class="clearfix featured-title-left">
+    <div id="featured-title-inner" class="container clearfix">
+        <div class="featured-title-inner-wrap">
+            <div class="featured-title-heading-wrap">
+                <h1 class="featured-title-heading">About Us</h1>
             </div>
-        </div>
-    </section>
-
-    <div class="container py-4">
-        <div class="row mb-2">
-            <div class="col page-content" style="word-break: break-word!important;">
-                {!! $aboutUs->page_content !!}
+            <div id="breadcrumbs">
+                <div class="breadcrumbs-inner">
+                    <div class="breadcrumb-trail">
+                        <a href="#" title="Construction" rel="home" class="trail-begin">Home</a>
+                        <span class="sep">/</span>
+                        <span class="trail-end">About Us</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
+
+<div id="content-wrap">
+    <div id="site-content" class="site-content clearfix">
+        <div id="inner-content" class="inner-content-wrap">
+            <div class="page-content">
+                <!-- GALLERY -->
+                <section class="wprt-section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="wprt-spacer" data-desktop="100" data-mobi="40" data-smobi="40"></div>
+                                <h2 class="text-center margin-bottom-20">OUR HISTORY & FACTS</h2>
+                                <div class="wprt-lines style-2 custom-1">
+                                    <div class="line-1"></div>
+                                </div>
+
+                                <div class="wprt-spacer" data-desktop="36" data-mobi="30" data-smobi="30"></div>
+
+                                <p class="wprt-subtitle">{!! $aboutUs->page_content !!}</p>
+
+                                <div class="wprt-spacer" data-desktop="40" data-mobi="30" data-smobi="30"></div>
+                            </div><!-- /.col-md-12 -->
+
+                            >
+
+                            <div class="col-md-12">
+                                <div class="wprt-spacer" data-desktop="110" data-mobi="40" data-smobi="40"></div>
+                            </div>
+                        </div><!-- /.row -->
+                    </div><!-- /.container -->
+                </section>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    
 @endsection
 
 @push('script')

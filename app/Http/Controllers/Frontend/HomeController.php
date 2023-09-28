@@ -12,6 +12,7 @@ use App\Models\Category;
 use App\Models\Testimonial;
 use App\Models\WhyChooseUs;
 use App\Http\Controllers\Controller;
+use App\Models\Service;
 use App\Models\Team;
 
 class HomeController extends Controller
@@ -32,8 +33,9 @@ class HomeController extends Controller
         $type = Type::active()->latest()->get();
         $categories = Category::active()->latest()->get();
         $projects = Project::with('type')->published()->whereIsFeatured(true)->orwhere('is_best', true)->latest()->take(9)->get();
+        $services = Service::with('serviceCategory')->published()->latest()->take(9)->get();
         $settings = Setting::first();
 
-        return view('frontend.pages.home', compact('testimonials','teams', 'whyChooseUs', 'news', 'events', 'sliders','categories','type', 'projects', 'settings'));
+        return view('frontend.pages.home', compact('testimonials','teams', 'whyChooseUs', 'news', 'events', 'sliders','categories','type', 'projects','services', 'settings'));
     }
 }

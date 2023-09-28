@@ -19,6 +19,8 @@ Route::get('/event/details/{id}/{title}', [App\Http\Controllers\Frontend\PageCon
 Route::get('/blog/details/{id}/{title}', [App\Http\Controllers\Frontend\PageController::class, 'blogDetails'])->name('blog.details');
 Route::get('/project/{id}/{type}', [App\Http\Controllers\Frontend\PageController::class, 'project'])->name('project');
 Route::get('/project-details/{id}/{title}', [App\Http\Controllers\Frontend\PageController::class, 'projectDetails'])->name('project.details');
+// Service Details
+Route::get('/service-details/{id}/{title}', [App\Http\Controllers\Frontend\PageController::class, 'serviceDetails'])->name('service.details');
 Route::get('/land-owner', [App\Http\Controllers\Frontend\PageController::class, 'landOwner'])->name('land.owner');
 Route::get('/client-requirements', [App\Http\Controllers\Frontend\PageController::class, 'clientRequirements'])->name('client.requirements');
 Route::get('/contact-us', [App\Http\Controllers\Frontend\PageController::class, 'contactUs'])->name('contact.us');
@@ -55,6 +57,7 @@ Route::group(['as'=>'admin.', 'prefix'=>'admin', 'middleware'=>['auth']], functi
     // Add
     Route::resource('team', App\Http\Controllers\Backend\TeamController::class);
     Route::resource('serviceCategory', App\Http\Controllers\Backend\ServiceCategoryController::class);
+    Route::resource('service', App\Http\Controllers\Backend\ServiceController::class);
 
     Route::get('client-requirement/{clientRequirement}', [App\Http\Controllers\Backend\ClientRequirementController::class, 'updateStatus'])->name('client-requirement.status.update');
     Route::get('client-requirement', [App\Http\Controllers\Backend\ClientRequirementController::class, 'index'])->name('client-requirement.index');
@@ -73,6 +76,7 @@ Route::group(['as'=>'admin.', 'prefix'=>'admin', 'middleware'=>['auth']], functi
     Route::post('blog/file-upload', [App\Http\Controllers\Backend\BlogController::class, 'fileUpload'])->name('blog.file.Upload');
     Route::post('about/file-upload', [App\Http\Controllers\Backend\AboutUsController::class, 'fileUpload'])->name('about.file.Upload');
     Route::post('project/file-upload', [App\Http\Controllers\Backend\ProjectController::class, 'fileUpload'])->name('project.file.Upload');
+    Route::post('service/file-upload', [App\Http\Controllers\Backend\ServiceController::class, 'fileUpload'])->name('service.file.Upload');
 
     Route::get('project/specification/{project}', [App\Http\Controllers\Backend\ProjectController::class, 'createProjectSpecification'])->name('project.specification');
     Route::post('project/specification/store/{project}', [App\Http\Controllers\Backend\ProjectController::class, 'storeProjectSpecification'])->name('project.specification.store');
