@@ -648,7 +648,7 @@
                     </section>
 
                     <!-- OFFER -->
-                    <section id="features" class="wprt-section">
+                    {{-- <section id="features" class="wprt-section">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
@@ -788,7 +788,7 @@
 
                             </div><!-- /.row -->
                         </div><!-- /.container -->
-                    </section>
+                    </section> --}}
 
                     <!-- PROMOTION -->
                     <section id="promotion" class="wprt-section">
@@ -923,8 +923,8 @@
                                                             </div>
                                                             @endif
                                                              <ul class="socials clearfix">
-                                                                @if ($team->facebook_url)
-                                                                <li class="twitter"><a target="_blank" href="{{$team->facebook_url}}"><i class="fa fa-twitter"></i></a></li>
+                                                                @if ($team->twitter_url)
+                                                                <li class="twitter"><a target="_blank" href="{{$team->twitter_url}}"><i class="fa fa-twitter"></i></a></li>
                                                                 @endif
                                                                 @if ($team->email_url)
                                                                 <li class="google-plus"><a target="_blank" href="{{$team->email_url}}"><i class="fa fa-google-plus"></i></a></li>

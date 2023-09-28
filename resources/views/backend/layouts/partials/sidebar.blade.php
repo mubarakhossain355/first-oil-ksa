@@ -351,6 +351,30 @@
             </ul>
           </li>
 
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-quote-left"></i>
+              <p>
+                Service Category
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('admin.serviceCategory.create') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Service Category</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.serviceCategory.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Service Category List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
           <li class="nav-item">
             <a href="{{ route('admin.land-owner.index') }}" class="nav-link">
               <i class="nav-icon fas fa-building"></i>
