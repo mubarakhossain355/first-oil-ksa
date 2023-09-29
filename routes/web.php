@@ -19,7 +19,8 @@ Route::get('/event/details/{id}/{title}', [App\Http\Controllers\Frontend\PageCon
 Route::get('/blog/details/{id}/{title}', [App\Http\Controllers\Frontend\PageController::class, 'blogDetails'])->name('blog.details');
 Route::get('/project/{id}/{type}', [App\Http\Controllers\Frontend\PageController::class, 'project'])->name('project');
 Route::get('/project-details/{id}/{title}', [App\Http\Controllers\Frontend\PageController::class, 'projectDetails'])->name('project.details');
-// Service Details
+// Service
+Route::get('/service', [App\Http\Controllers\Frontend\PageController::class, 'service'])->name('service');
 Route::get('/service-details/{id}/{title}', [App\Http\Controllers\Frontend\PageController::class, 'serviceDetails'])->name('service.details');
 Route::get('/land-owner', [App\Http\Controllers\Frontend\PageController::class, 'landOwner'])->name('land.owner');
 Route::get('/client-requirements', [App\Http\Controllers\Frontend\PageController::class, 'clientRequirements'])->name('client.requirements');
@@ -31,6 +32,7 @@ Route::post('/contact-us', [App\Http\Controllers\Frontend\PageController::class,
 Route::post('/client-requirements', [App\Http\Controllers\Frontend\PageController::class, 'storeClientRequirement'])->name('client.requirement.store');
 Route::post('/land-owner', [App\Http\Controllers\Frontend\PageController::class, 'storelandOwner'])->name('land.owner.store');
 Route::post('/booking', [App\Http\Controllers\Frontend\PageController::class, 'projectBooking'])->name('booking.store');
+Route::post('/career/contact', [App\Http\Controllers\Frontend\PageController::class, 'careerContact'])->name('career.contact.store');
 
 // Routes for backend
 Route::group(['as'=>'admin.', 'prefix'=>'admin', 'middleware'=>['auth']], function () {
@@ -70,6 +72,9 @@ Route::group(['as'=>'admin.', 'prefix'=>'admin', 'middleware'=>['auth']], functi
 
     Route::get('booking/status-update/{booking}', [App\Http\Controllers\Backend\BookingController::class, 'updateStatus'])->name('booking.status.update');
     Route::get('booking', [App\Http\Controllers\Backend\BookingController::class, 'index'])->name('booking.index');
+    // Career Contact
+    Route::get('career/contact/info', [App\Http\Controllers\Backend\CareerContactController::class, 'index'])->name('career.contact.index');
+    Route::get('career/contact/status-update/{careerContact}', [App\Http\Controllers\Backend\CareerContactController::class, 'updateStatus'])->name('career.contact.status.update');
 
     Route::post('news/file-upload', [App\Http\Controllers\Backend\NewsController::class, 'fileUpload'])->name('news.file.Upload');
     Route::post('event/file-upload', [App\Http\Controllers\Backend\EventController::class, 'fileUpload'])->name('event.file.Upload');

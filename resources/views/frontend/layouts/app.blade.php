@@ -65,9 +65,20 @@
                                         </li>
                                     @endif
                                    
-                                    <li class="menu-item "><a href="service.html">Services</a></li>
-                                    <li class="menu-item "><a href="project.html">Project</a></li>
+                                    <li class="menu-item "><a href="{{route('service')}}">Services</a></li>
+                                    @if (count($types) > 0)
+                                    <li class="menu-item menu-item-has-children"><a  href="#">
+                                            Project </a> 
+                                        <ul class="sub-menu">
+                                            @foreach ($types as $type)
+                                                <li class="menu-item"><a  href="{{ route('project', [$type->id, Str::slug($type->name)]) }}">{{ $type->name }}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                @endif
                                     <li class="menu-item"><a href="blog.html">Blog</a></li>
+                                    <li  class="menu-item"><a href="{{ route('career') }}">Career</a></li>
                                     <li class="menu-item"><a href="contact.html">Contact</a></li>
                                 </ul>
                             </nav><!-- /#main-nav -->

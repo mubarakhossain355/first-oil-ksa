@@ -17,6 +17,7 @@ use App\Models\LandOwner;
 use Illuminate\Http\Request;
 use App\Models\ClientRequirement;
 use App\Http\Controllers\Controller;
+use App\Models\CareerContact;
 use App\Models\Service;
 
 class PageController extends Controller
@@ -149,12 +150,53 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function careerContact(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|max:191',
+            'email' => 'required|email',
+            'contact_number' => 'required|max:20',
+            'subject' => 'required|max:191',
+            'message' => 'required',
+        ]);
+
+        $careerContact = new CareerContact();
+        $careerContact->name = $request->name;
+        $careerContact->email = $request->email;
+        $careerContact->contact_number = $request->contact_number;
+        $careerContact->subject = $request->subject;
+        $careerContact->message = $request->message;
+        $careerContact->save();
+
+        return back()->with('message', 'Done! Thanks for Contact Us');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function projectDetails($id)
     {
         $project = Project::find($id);
 
         return view('frontend.pages.project-details', compact('project'));
     }
+
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function service()
+    {
+        $settings = Setting::first();
+        $services = Service::published()->latest()->get();
+
+        return view('frontend.pages.service', compact('services'));
+    }
+
 
      /**
      * Display a listing of the resource.

@@ -13,14 +13,14 @@
     <div id="featured-title-inner" class="container clearfix">
         <div class="featured-title-inner-wrap">
             <div class="featured-title-heading-wrap">
-                <h1 class="featured-title-heading">Services Details</h1>
+                <h1 class="featured-title-heading">{{$service->title}} - Details</h1>
             </div>
             <div id="breadcrumbs">
                 <div class="breadcrumbs-inner">
                     <div class="breadcrumb-trail">
                         <a href="{{route('home')}}"  rel="home" class="trail-begin">Home</a>
                         <span class="sep">/</span>
-                        <span class="trail-end">Services Details</span>
+                        <span class="trail-end">{{$service->title}} - Details</span>
                     </div>
                 </div>
             </div>

@@ -16,6 +16,8 @@ class Career extends Model
      */
     protected $fillable = [
         'job_title',
+        'job_code',
+        'experience',
         'vacancy',
         'salary',
         'job_location',

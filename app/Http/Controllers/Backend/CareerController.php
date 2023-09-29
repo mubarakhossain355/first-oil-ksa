@@ -47,6 +47,8 @@ class CareerController extends Controller
     {
         $this->validate($request, [
             'job_title' => 'required|max:191',
+            'job_code' => 'required|max:191',
+            'experience' => 'required|max:191',
             'vacancy' => 'required|max:191',
             'job_location' => 'required|max:191',
             'salary' => 'required|max:191',
@@ -85,6 +87,8 @@ class CareerController extends Controller
     {
         $this->validate($request, [
             'job_title' => 'required|max:191',
+            'job_code' => 'required|max:191',
+            'experience' => 'required|max:191',
             'vacancy' => 'required|max:191',
             'job_location' => 'required|max:191',
             'salary' => 'required|max:191',

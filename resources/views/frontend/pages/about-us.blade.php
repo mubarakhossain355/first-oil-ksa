@@ -8,14 +8,14 @@
     <div id="featured-title-inner" class="container clearfix">
         <div class="featured-title-inner-wrap">
             <div class="featured-title-heading-wrap">
-                <h1 class="featured-title-heading">About Us</h1>
+                <h1 class="featured-title-heading">{{$aboutUs->page_title}}</h1>
             </div>
             <div id="breadcrumbs">
                 <div class="breadcrumbs-inner">
                     <div class="breadcrumb-trail">
                         <a href="#" title="Construction" rel="home" class="trail-begin">Home</a>
                         <span class="sep">/</span>
-                        <span class="trail-end">About Us</span>
+                        <span class="trail-end">{{$aboutUs->page_title}}</span>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="wprt-spacer" data-desktop="100" data-mobi="40" data-smobi="40"></div>
-                                <h2 class="text-center margin-bottom-20">OUR HISTORY & FACTS</h2>
+                                
                                 <div class="wprt-lines style-2 custom-1">
                                     <div class="line-1"></div>
                                 </div>
@@ -45,7 +45,7 @@
                                 <div class="wprt-spacer" data-desktop="40" data-mobi="30" data-smobi="30"></div>
                             </div><!-- /.col-md-12 -->
 
-                            >
+                            
 
                             <div class="col-md-12">
                                 <div class="wprt-spacer" data-desktop="110" data-mobi="40" data-smobi="40"></div>

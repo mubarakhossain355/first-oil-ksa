@@ -423,6 +423,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route('admin.career.contact.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Career Contact
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('admin.feedback.index') }}" class="nav-link">
               <i class="nav-icon fas fa-comments"></i>
               <p>

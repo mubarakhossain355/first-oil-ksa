@@ -2,82 +2,121 @@
 
 @section('title', 'Project Page')
 
-    @push('css')
-
-    @endpush
+@push('css')
+@endpush
 
 @section('content')
-    <section
-        style="margin: 0; background-image: url({{ asset('storage/' . $settings->breadcrub_image) }});background-attachment: fixed;background-size: cover;background-position: center;background-repeat: no-repeat;"
-        class="page-header page-header-modern bg-color-light-scale-1 page-header-lg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 align-self-center p-static order-2 text-center">
-                    <h1 class="font-weight-bold text-light ">{{ $type->name }}</h1>
+    <!-- Featured Title -->
+    <div id="featured-title" class="clearfix featured-title-left">
+        <div id="featured-title-inner" class="container clearfix">
+            <div class="featured-title-inner-wrap">
+                <div class="featured-title-heading-wrap">
+                    <h1 class="featured-title-heading">Projects</h1>
                 </div>
-                <div class="col-md-12 align-self-center order-1">
-                    <ul class="breadcrumb d-block text-center text-light">
-                        <li><a class="text-light" href="{{ route('home') }}">Home</a></li>
-                        <li class="active">Project</li>
-                    </ul>
+                <div id="breadcrumbs">
+                    <div class="breadcrumbs-inner">
+                        <div class="breadcrumb-trail">
+                            <a href="#" title="Construction" rel="home" class="trail-begin">Home</a>
+                            <span class="sep">/</span>
+                            <span class="trail-end">Projects</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="section border-0 m-0 pb-0  appear-animation" data-appear-animation="fadeIn">
-        <ul class=" pb-3 nav nav-pills sort-source sort-source-style-3 justify-content-center" data-sort-id="portfolio"
-            data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
-            <li class="nav-item active" data-option-value="*"><a class="nav-link text-1 text-uppercase active" href="#">Show
-                    All</a></li>
-            @foreach ($categories as $category)
-                <li class="nav-item" data-option-value=".{{ \Illuminate\Support\Str::slug($category->name) }}"><a
-                        class="nav-link text-1 text-uppercase" href="#">{{ $category->name }}</a></li>
-            @endforeach
-        </ul>
+    <div id="content-wrap">
+        <div id="site-content" class="site-content clearfix">
+            <div id="inner-content" class="inner-content-wrap">
+                <div class="page-content">
+                    <section class="wprt-section">
+                        <!-- WORKS -->
+                        <section id="works" class="wprt-section">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="wprt-spacer" data-desktop="100" data-mobi="40" data-smobi="40"></div>
 
-        <div class="sort-destination-loader sort-destination-loader-showing recent-posts  m-0 p-0">
-            <div class="row portfolio-list sort-destination m-0 p-0" data-sort-id="portfolio">
-                @forelse ($projects as $project)
-                    <div
-                        class="col-sm-6 col-lg-4 pb-2 mb-4 isotope-item {{ \Illuminate\Support\Str::slug($project->category->name) }} text-left">
-                        <a href="{{ route('project.details', [$project->id, Str::slug($project->title)]) }}">
-                            <article>
-                                <div
-                                    class="thumb-info thumb-info-no-borders thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-show-more thumb-info-no-zoom border-radius-0">
-                                    <div class="thumb-info-wrapper thumb-info-wrapper-opacity-6">
-                                        <img src="{{ asset('storage/' . $project->featured_image) }}" class="img-fluid"
-                                            alt="{{ $project->title }} - {{ config('app.name', 'Laravel') }}">
+                                        <h2 class="text-center margin-bottom-20">RECENT WORKS</h2>
+                                        <div class="wprt-lines style-2 custom-1">
+                                            <div class="line-1"></div>
+                                        </div>
 
-                                        <div class="thumb-info-title bg-transparent p-4">
-                                            <div class="thumb-info-type bg-color-primary px-2 mb-1">
-                                                {{ $project->type->name }}
-                                            </div>
-                                            <div class="thumb-info-inner mt-1">
-                                                <h2 class="text-color-light line-height-2 text-4 font-weight-bold mb-0">
-                                                    {{ $project->title }}
-                                                </h2>
-                                            </div>
-                                            <div class="thumb-info-show-more-content">
-                                                <p
-                                                    class="mb-0 text-1 line-height-9 mb-1 mt-2 text-light opacity-5 d-none d-lg-block">
-                                                    {{ $project->short_description }}
-                                                </p>
+                                        <div class="wprt-spacer" data-desktop="36" data-mobi="30" data-smobi="30"></div>
+                                    </div><!-- /.col-md-12 -->
+                                </div><!-- /.row -->
+                            </div><!-- /.container -->
+
+                            <div class="wprt-project" data-layout="grid" data-column="4" data-column2="3" data-column3="2"
+                                data-column4="1" data-gaph="0" data-gapv="0">
+                                <div id="project-filter">
+                                    <div data-filter="*" class="cbp-filter-item">
+                                        <span>All</span>
+                                    </div>
+                                    @foreach ($categories as $category)
+                                        <div data-filter=".{{ \Illuminate\Support\Str::slug($category->name) }}"
+                                            class="cbp-filter-item">
+                                            <span>{{ $category->name }}</span>
+                                        </div>
+                                    @endforeach
+
+                                </div><!-- /#project-filter -->
+
+
+
+                                <div id="projects" class="cbp">
+                                    @forelse ($projects as $project)
+                                        <div class="cbp-item {{ \Illuminate\Support\Str::slug($project->category->name) }}">
+                                            <div class="project-item">
+                                                <div class="inner">
+                                                    <div class="grid">
+                                                        <figure class="effect-zoe">
+                                                            <img src="{{ asset('storage/' . $project->featured_image) }}"
+                                                                alt="{{ $project->title }} - {{ config('app.name', 'Laravel') }}" />
+                                                            <figcaption>
+                                                                <div>
+                                                                    <h2><a target="_blank"
+                                                                            href="{{ route('project.details', [$project->id, Str::slug($project->title)]) }}">
+                                                                            {{ $project->title }}</a></h2>
+                                                                    <p>{{ $project->type->name }}</p>
+                                                                </div>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </div>
+
+                                                    <a class="project-zoom cbp-lightbox"
+                                                        href="{{ asset('storage/' . $project->featured_image) }}"
+                                                        data-title="LUXURY BUILDINGS">
+                                                        <i class="fa fa-arrows-alt"></i>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </article>
-                        </a>
-                    </div>
-                @empty
-                    <p class="text-center">No {{ $type->name }} Project Found</p>
-                @endforelse
+                                    @empty
+                                        <p class="text-center">No {{ $type->name }} Project Found</p>
+                                    @endforelse
+                                    <!--/.cbp-item -->
+
+
+
+                                </div><!-- /#projects -->
+
+
+
+                            </div><!-- /#projects -->
+                </div><!--/.wprt-project -->
+                </section>
+                
+                </section>
             </div>
         </div>
-    </section>
+    </div>
+    
+
+
 @endsection
 
-@push('script')
 
+@push('script')
 @endpush

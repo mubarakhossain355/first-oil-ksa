@@ -42,6 +42,34 @@
                                             </span>
                                         @enderror
                                     </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputFullName">Job Code</label>
+                                        <input type="text" name="job_code"
+                                            class="form-control @error('job_code') is-invalid @enderror"
+                                            value="{{ old('job_code') }}" id="exampleInputFullName"
+                                            placeholder="Enter job Code">
+                                        @error('job_code')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputFullName">Experience</label>
+                                        <input type="text" name="experience"
+                                            class="form-control @error('experience') is-invalid @enderror"
+                                            value="{{ old('experience') }}" id="exampleInputFullName"
+                                            placeholder="Enter experience">
+                                        @error('experience')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+
+
                                     <div class="form-group">
                                         <label for="exampleInputFullName">Vacancy</label>
                                         <input type="text" name="vacancy"
