@@ -77,9 +77,17 @@
                                         </ul>
                                     </li>
                                 @endif
-                                    <li class="menu-item"><a href="blog.html">Blog</a></li>
+                                    <li class="menu-item menu-item-has-children"><a href="#">Media</a>
+                                        <ul class="sub-menu">
+                                           
+                                                <li class="menu-item"><a  href="{{ route('news') }}">News</a></li>
+                                                <li class="menu-item"><a  href="{{ route('event') }}">Events</a></li>
+                                                <li class="menu-item"><a  href="{{ route('blog') }}">Blog</a></li>
+                                           
+                                        </ul>
+                                    </li>
                                     <li  class="menu-item"><a href="{{ route('career') }}">Career</a></li>
-                                    <li class="menu-item"><a href="contact.html">Contact</a></li>
+                                    <li class="menu-item"><a href="{{ route('contact.us') }}">Contact</a></li>
                                 </ul>
                             </nav><!-- /#main-nav -->
                         </div>

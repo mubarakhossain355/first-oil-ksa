@@ -7,23 +7,26 @@
     @endpush
 
 @section('content')
-    <section
-        style="margin: 0; background-image: url({{ asset('storage/' . $settings->breadcrub_image) }});background-attachment: fixed;background-size: cover;background-position: center;background-repeat: no-repeat;"
-        class="page-header page-header-modern bg-color-light-scale-1 page-header-lg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 align-self-center p-static order-2 text-center">
-                    <h1 class="font-weight-bold text-light ">{{ $career->job_title }}</h1>
-                </div>
-                <div class="col-md-12 align-self-center order-1">
-                    <ul class="breadcrumb d-block text-center text-light">
-                        <li><a class="text-light" href="{{ route('home') }}">Home</a></li>
-                        <li class="active">Job Details</li>
-                    </ul>
+    
+  <!-- Featured Title -->
+<div id="featured-title" class="clearfix featured-title-left">
+    <div id="featured-title-inner" class="container clearfix">
+        <div class="featured-title-inner-wrap">
+            <div class="featured-title-heading-wrap">
+                <h1 class="featured-title-heading">{{$career->job_title}}- Details</h1>
+            </div>
+            <div id="breadcrumbs">
+                <div class="breadcrumbs-inner">
+                    <div class="breadcrumb-trail">
+                        <a href="{{route('home')}}"  rel="home" class="trail-begin">Home</a>
+                        <span class="sep">/</span>
+                        <span class="trail-end">{{$career->job_title}}- Details</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
 
     <div class="container py-4">
         <h2 class="font-weight-bold text-6 mb-3">Job Details</h2>

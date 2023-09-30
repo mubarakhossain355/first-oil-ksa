@@ -7,59 +7,108 @@
     @endpush
 
 @section('content')
-    <section
-        style="margin: 0; background-image: url({{ asset('storage/' . $settings->breadcrub_image) }});background-attachment: fixed;background-size: cover;background-position: center;background-repeat: no-repeat;"
-        class="page-header page-header-modern bg-color-light-scale-1 page-header-lg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 align-self-center p-static order-2 text-center">
-                    <h1 class="font-weight-bold text-light ">{{ $title }}</h1>
-                </div>
-                <div class="col-md-12 align-self-center order-1">
-                    <ul class="breadcrumb d-block text-center text-light">
-                        <li><a class="text-light" href="{{ route('home') }}">Home</a></li>
-                        <li class="active">Media</li>
-                    </ul>
-                </div>
+     <!-- Featured Title -->
+<div id="featured-title" class="clearfix featured-title-left">
+    <div id="featured-title-inner" class="container clearfix">
+        <div class="featured-title-inner-wrap">
+            <div class="featured-title-heading-wrap">
+                <h1 class="featured-title-heading">{{ $title }} </h1>
             </div>
-        </div>
-    </section>
-
-    <section class="section border-0 m-0 pb-3 appear-animation" data-appear-animation="fadeInUp"
-        data-appear-animation-delay="0" data-appear-animation-duration="1s">
-        <div class="container container-lg-custom">
-            <div class="row pb-1">
-                @forelse ($media as $medium)
-                    <div class="col-sm-6 col-lg-4 mb-4 pb-2">
-                        <a href="{{ route(Str::lower($title) . '.details', [$medium->id, Str::slug($medium->title)]) }}">
-                            <article>
-                                <div
-                                    class="thumb-info thumb-info-no-borders thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-show-more thumb-info-no-zoom border-radius-0">
-                                    <div class="thumb-info-wrapper thumb-info-wrapper-opacity-6">
-                                        <img src="{{ asset('storage/' . $medium->photo) }}" class="img-fluid"
-                                            alt="{{ $title }} - {{ config('app.name', 'Laravel') }}">
-                                        <div class="thumb-info-title bg-transparent p-4">
-                                            <div class="thumb-info-type bg-color-primary px-2 mb-1">{{ $title }}</div>
-                                            <div class="thumb-info-inner mt-1">
-                                                <h2 class="text-color-light line-height-2 text-4 font-weight-bold mb-0">
-                                                    {{ $medium->title }}</h2>
-                                            </div>
-                                            <div class="thumb-info-show-more-content">
-                                                <p class="mb-0 text-1 line-height-9 mb-1 mt-2 text-light opacity-5">
-                                                    {{ $medium->short_description }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        </a>
+            <div id="breadcrumbs">
+                <div class="breadcrumbs-inner">
+                    <div class="breadcrumb-trail">
+                        <a href="{{route('home')}}"  rel="home" class="trail-begin">Home</a>
+                        <span class="sep">/</span>
+                        <span class="trail-end">Media</span>
                     </div>
-                @empty
-                    <p class="text-center">No {{ $title }} found!</p>
-                @endforelse
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
+
+<div id="content-wrap" class="container">
+    <div id="site-content-blog" class="site-content clearfix">
+        <div id="inner-content" class="inner-content-wrap">
+
+            @forelse ($media as $medium)
+                <article class="hentry">
+                    <div class="post-media clearfix">
+                        <a href="{{ route(Str::lower($title) . '.details', [$medium->id, Str::slug($medium->title)]) }}"><img src="{{ asset('storage/' . $medium->photo) }}" alt="{{ $title }} - {{ config('app.name', 'Laravel') }}"></a>
+                    </div><!-- /.post-media -->
+
+                    <div class="post-content-wrap">
+                        <h2 class="post-title">
+                            <span class="post-title-inner">
+                                <a href="{{ route(Str::lower($title) . '.details', [$medium->id, Str::slug($medium->title)]) }}"> {{ $medium->title }}</a>
+                            </span>
+                        </h2><!-- /.post-title -->
+
+                        <div class="post-meta style-3">
+                            <div class="post-meta-content">
+                                <div class="post-meta-content-inner">
+                                    
+
+                                    <span class="post-date item">
+                                        <span class="inner"><span class="entry-date">{{date('M-d-y',strtotime($medium->published_date))}}</span></span>
+                                    </span>
+
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div><!-- /.post-meta -->
+
+                        <div class="post-content post-excerpt">
+                            <p>{{$medium->short_description}}</p>
+                        </div><!-- /.post-excerpt -->
+
+                        <div class="post-read-more">
+                            <div class="post-link">
+                                <a href="{{ route(Str::lower($title) . '.details', [$medium->id, Str::slug($medium->title)]) }}">Read More</a>
+                            </div>
+                        </div><!-- /.post-read-more -->
+                    </div><!-- /.post-content-wrap -->
+                </article>
+
+            @empty
+                <h5 class="text-center mt-5">No {{ $title }} found!</h5>
+            @endforelse
+
+            
+        </div><!-- /.inner-content-wrap -->
+    </div><!-- /#site-content -->
+
+    <div id="sidebar">
+        <div id="inner-sidebar" class="inner-content-wrap">
+           
+            <div class="widget widget_recent_news">
+                <h2 class="widget-title"><span>Lastest Media</span></h2>
+                <ul class="recent-news clearfix">
+                    @foreach ($media as $medium)
+                    <li class="clearfix">
+                        <div class="thumb">
+                            <img width="150" height="150" src="{{ asset('storage/' . $medium->photo) }}" alt="{{ $title }} - {{ config('app.name', 'Laravel') }}">
+                        </div><!-- /.thumb -->
+
+                        <div class="texts">
+                            <h3><a href="{{ route(Str::lower($title) . '.details', [$medium->id, Str::slug($medium->title)]) }}">{{$medium->title}}</a></h3>
+                            <span class="post-date"><span class="entry-date">{{date('M-d-y',strtotime($medium->published_date))}}</span></span>
+                        </div><!-- /.texts -->
+                    </li>
+
+                    @endforeach
+                    
+                   
+                    
+
+                </ul>
+            </div>
+
+           
+        </div><!-- /#inner-sidebar -->
+    </div><!-- /#sidebar -->
+</div><!-- /#content-wrap -->
 @endsection
 
 @push('script')
