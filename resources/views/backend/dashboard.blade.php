@@ -31,21 +31,12 @@
           <span class="info-box-icon bg-info elevation-1"><i class="fas fa-building"></i></span>
 
           <div class="info-box-content">
-            <span class="info-box-text">Pending Land Owner Request</span>
-            <span class="info-box-number">{{ $pendingLandOwnerRequest }}</span>
+            <span class="info-box-text">Active Jobs</span>
+            <span class="info-box-number">{{ $activeJob }}</span>
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4">
-        <div class="info-box mb-3">
-          <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-user-plus"></i></span>
-
-          <div class="info-box-content">
-            <span class="info-box-text">Pending Client Demand</span>
-            <span class="info-box-number">{{ $pendingClientDemand }}</span>
-          </div>
-        </div>
-      </div>
+      
 
       <div class="clearfix hidden-md-up"></div>
 
@@ -59,16 +50,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4">
-        <div class="info-box mb-3">
-          <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-graduation-cap"></i></span>
-
-          <div class="info-box-content">
-            <span class="info-box-text">Active Jobs</span>
-            <span class="info-box-number">{{ $activeJob }}</span>
-          </div>
-        </div>
-      </div>
+       
       {{-- <div class="col-12 col-sm-6 col-md-4">
         <div class="info-box mb-3">
           <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-users"></i></span>

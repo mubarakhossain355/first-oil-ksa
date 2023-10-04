@@ -179,9 +179,10 @@ class PageController extends Controller
      */
     public function projectDetails($id)
     {
+        $settings = Setting::first();
         $project = Project::find($id);
 
-        return view('frontend.pages.project-details', compact('project'));
+        return view('frontend.pages.project-details', compact('project','settings'));
     }
 
      /**
@@ -194,7 +195,7 @@ class PageController extends Controller
         $settings = Setting::first();
         $services = Service::published()->latest()->get();
 
-        return view('frontend.pages.service', compact('services'));
+        return view('frontend.pages.service', compact('services','settings'));
     }
 
 
@@ -205,9 +206,10 @@ class PageController extends Controller
      */
     public function serviceDetails($id)
     {
+        $settings = Setting::first();
         $service = Service::find($id);
 
-        return view('frontend.pages.service-details', compact('service'));
+        return view('frontend.pages.service-details', compact('service','settings'));
     }
 
     /**

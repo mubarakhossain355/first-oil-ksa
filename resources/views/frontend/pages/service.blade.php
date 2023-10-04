@@ -9,7 +9,7 @@
 @section('content')
 
   <!-- Featured Title -->
-<div id="featured-title" class="clearfix featured-title-left">
+<div style="background: url({{ asset('storage/' . $settings->breadcrub_image) }})" id="featured-title" class="clearfix featured-title-left">
     <div id="featured-title-inner" class="container clearfix">
         <div class="featured-title-inner-wrap">
             <div class="featured-title-heading-wrap">

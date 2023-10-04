@@ -46,12 +46,24 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputFullName">Contact Number</label>
+                                    <label for="exampleInputFullName">Contact Number 1</label>
                                     <input type="text" name="mobile"
                                         class="form-control @error('mobile') is-invalid @enderror"
                                         value="{{ old('mobile', $setting->mobile) }}" id="exampleInputFullmobile"
                                         placeholder="Enter mobile">
                                     @error('mobile')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFullName">Contact Number 2</label>
+                                    <input type="text" name="mobile_1"
+                                        class="form-control @error('mobile_1') is-invalid @enderror"
+                                        value="{{ old('mobile_1', $setting->mobile_1) }}" id="exampleInputFullmobile"
+                                        placeholder="Enter mobile 2">
+                                    @error('mobile_1')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -129,6 +141,30 @@
                                         </span>
                                     @enderror
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFullName">Youtube URL</label>
+                                    <input type="text" name="youtube_url"
+                                        class="form-control @error('youtube_url') is-invalid @enderror"
+                                        value="{{ old('youtube_url', $setting->youtube_url) }}"
+                                        id="exampleInputFulllinkedin_url" placeholder="Enter youtube url">
+                                    @error('youtube_url')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFullName">Instagram URL</label>
+                                    <input type="text" name="instagram_url"
+                                        class="form-control @error('instagram_url') is-invalid @enderror"
+                                        value="{{ old('instagram_url', $setting->instagram_url) }}"
+                                        id="exampleInputFulllinkedin_url" placeholder="Enter instagram url">
+                                    @error('instagram_url')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
                                 <div style="position: relative" class="form-group">
                                     <label for="exampleInputFile">Logo</label><br>
                                     <input type="file" name="logo" class="@error('logo') is-invalid @enderror">
@@ -182,17 +218,20 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputMobile">Why Choose Us Section Sub Title</label>
-                                    <textarea type="text" name="why_choose_us_sub_title"
-                                        class="form-control @error('why_choose_us_sub_title') is-invalid @enderror" value=""
-                                        id="exampleInputMobile"
-                                        placeholder="Enter why choose us sub title">{{ old('why_choose_us_sub_title', $setting->why_choose_us_sub_title) }}</textarea>
-                                    @error('why_choose_us_sub_title')
+                                <div style="position: relative" class="form-group">
+                                    <label for="exampleInputFile">Why Choose US Image</label><br>
+                                    <input type="file" name="why_choose_us_image"
+                                        class="@error('why_choose_us_image') is-invalid @enderror">
+                                    @error('why_choose_us_image')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
+                                    <div class="card-body text-center">
+                                        <img width="100" style="max-width: 100%; position: absolute; top: 15px;"
+                                            src="{{ asset('storage/' . $setting->why_choose_us_image) }}"
+                                            alt="why choose us image">
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputFullName">Project Section Title</label>
@@ -218,28 +257,102 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputFullName">Media Section Title</label>
-                                    <input type="text" name="media_title"
-                                        class="form-control @error('media_title') is-invalid @enderror"
-                                        value="{{ old('media_title', $setting->media_title) }}"
-                                        id="exampleInputFullmedia_title" placeholder="Enter media title">
-                                    @error('media_title')
+                                    <label for="exampleInputFullName">Service Section Title</label>
+                                    <input type="text" name="service_title"
+                                        class="form-control @error('service_title') is-invalid @enderror"
+                                        value="{{ old('service_title', $setting->service_title) }}"
+                                        id="exampleInputFullmedia_title" placeholder="Enter service title">
+                                    @error('service_title')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label>Media Section Sub Title</label>
-                                    <textarea type="text" name="media_sub_title"
-                                        class="form-control @error('media_sub_title') is-invalid @enderror" value=""
-                                        placeholder="Enter media sub title">{{ old('media_sub_title', $setting->media_sub_title) }}</textarea>
-                                    @error('media_sub_title')
+                                    <label>Service Section Sub Title</label>
+                                    <textarea type="text" name="service_sub_title"
+                                        class="form-control @error('service_sub_title') is-invalid @enderror" value=""
+                                        placeholder="Enter service sub title">{{ old('service_sub_title', $setting->service_sub_title) }}</textarea>
+                                    @error('service_sub_title')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputFullName">Testimonial Section Title</label>
+                                    <input type="text" name="testimonial_title"
+                                        class="form-control @error('testimonial_title') is-invalid @enderror"
+                                        value="{{ old('testimonial_title', $setting->testimonial_title) }}"
+                                        id="exampleInputFullmedia_title" placeholder="Enter testimonial title">
+                                    @error('testimonial_title')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label>Testimonial Section Sub Title</label>
+                                    <textarea type="text" name="testimonial_sub_title"
+                                        class="form-control @error('testimonial_sub_title') is-invalid @enderror" value=""
+                                        placeholder="Enter testimonial sub title">{{ old('testimonial_sub_title', $setting->testimonial_sub_title) }}</textarea>
+                                    @error('testimonial_sub_title')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputFullName">Our Team Section Title</label>
+                                    <input type="text" name="team_title"
+                                        class="form-control @error('team_title') is-invalid @enderror"
+                                        value="{{ old('team_title', $setting->team_title) }}"
+                                        id="exampleInputFullmedia_title" placeholder="Enter team title">
+                                    @error('team_title')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label>Our Team Section Sub Title</label>
+                                    <textarea type="text" name="team_sub_title"
+                                        class="form-control @error('team_sub_title') is-invalid @enderror" value=""
+                                        placeholder="Enter team sub title">{{ old('team_sub_title', $setting->team_sub_title) }}</textarea>
+                                    @error('team_sub_title')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputFullName">Contact US Section Title</label>
+                                    <input type="text" name="contact_us_title"
+                                        class="form-control @error('contact_us_title') is-invalid @enderror"
+                                        value="{{ old('contact_us_title', $setting->contact_us_title) }}"
+                                        id="exampleInputFullmedia_title" placeholder="Enter contact us title">
+                                    @error('contact_us_title')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label>Contact US Section Sub Title</label>
+                                    <textarea type="text" name="contact_us_sub_title"
+                                        class="form-control @error('contact_us_sub_title') is-invalid @enderror" value=""
+                                        placeholder="Enter contact us sub title">{{ old('contact_us_sub_title', $setting->contact_us_sub_title) }}</textarea>
+                                    @error('contact_us_sub_title')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
+
                                 <div class="form-group">
                                     <label for="exampleInputFullName">Call To Action 1 Title</label>
                                     <input type="text" name="call_to_action_one_title"
@@ -281,75 +394,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputFullName">Call To Action 2 Title</label>
-                                    <input type="text" name="call_to_action_two_title"
-                                        class="form-control @error('call_to_action_two_title') is-invalid @enderror"
-                                        value="{{ old('call_to_action_two_title', $setting->call_to_action_two_title) }}"
-                                        id="exampleInputFullcall_to_action_two_title"
-                                        placeholder="Enter call to action two title">
-                                    @error('call_to_action_two_title')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col">
-                                        <label for="exampleInputFullName">Call To Action 2 Button 1 Title </label>
-                                        <input type="text" name="call_to_action_two_button_one_title"
-                                            class="form-control @error('call_to_action_two_button_one_title') is-invalid @enderror"
-                                            value="{{ old('call_to_action_two_button_one_title', $setting->call_to_action_two_button_one_title) }}"
-                                            id="exampleInputFullcall_to_action_two_button_one_title"
-                                            placeholder="Enter call to action two button title">
-                                        @error('call_to_action_two_button_one_title')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                    <div class="col">
-                                        <label for="exampleInputFullName">Call To Action 2 Button 1 URL</label>
-                                        <input type="text" name="call_to_action_two_button_one_url"
-                                            class="form-control @error('call_to_action_two_button_one_url') is-invalid @enderror"
-                                            value="{{ old('call_to_action_two_button_one_url', $setting->call_to_action_two_button_one_url) }}"
-                                            id="exampleInputFullcall_to_action_two_button_one_url"
-                                            placeholder="Enter call to action two button url">
-                                        @error('call_to_action_two_button_one_url')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col">
-                                        <label for="exampleInputFullName">Call To Action 2 Button 2 Title</label>
-                                        <input type="text" name="call_to_action_two_button_two_title"
-                                            class="form-control @error('call_to_action_two_button_two_title') is-invalid @enderror"
-                                            value="{{ old('call_to_action_two_button_two_title', $setting->call_to_action_two_button_two_title) }}"
-                                            id="exampleInputFullcall_to_action_two_button_two_title"
-                                            placeholder="Enter call to action two button title">
-                                        @error('call_to_action_two_button_title')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                    <div class="col">
-                                        <label for="exampleInputFullName">Call To Action 2 Button 2 URL</label>
-                                        <input type="text" name="call_to_action_two_button_two_url"
-                                            class="form-control @error('call_to_action_two_button_two_url') is-invalid @enderror"
-                                            value="{{ old('call_to_action_two_button_two_url', $setting->call_to_action_two_button_two_url) }}"
-                                            id="exampleInputFullcall_to_action_two_button_two_url"
-                                            placeholder="Enter call to action two button url">
-                                        @error('call_to_action_two_button_two_url')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
+
                                 <div class="form-group row">
                                     <div class="col">
                                         <label>About Us Title For Footer Section</label>

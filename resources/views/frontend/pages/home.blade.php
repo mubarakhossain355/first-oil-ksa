@@ -7,6 +7,7 @@
 
 @section('content')
     <!-- Slider -->
+    @if(count($sliders) > 0)
     <div class="rev_slider_wrapper fullwidthbanner-container">
         <div id="rev-slider1" class="rev_slider fullwidthabanner">
             <ul>
@@ -79,24 +80,30 @@
             <div class="tp-bannertimer tp-bottom"></div>
         </div>
     </div>
+    @else
+    <p class="text-center">No  Slider  Found</p> 
+    @endif
 
     <div id="content-wrap">
         <div id="site-content" class="site-content clearfix">
             <div id="inner-content" class="inner-content-wrap">
                 <div class="page-content">
                     <!-- Intro -->
+
                     <section class="wprt-section intro">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="wprt-spacer" data-desktop="100" data-mobi="40" data-smobi="40"></div>
-
-                                    <h2 class="text-center margin-bottom-20">Our Services</h2>
+                                    <h2 class="text-center margin-bottom-20">{{ Str::upper($settings->service_title) }}</h2>
                                     <div class="wprt-lines style-2 custom-1">
                                         <div class="line-1"></div>
                                     </div>
 
                                     <div class="wprt-spacer" data-desktop="36" data-mobi="30" data-smobi="30"></div>
+
+                                    <p class="wprt-subtitle">{{ $settings->service_sub_title }}</p>
+                                    <div class="wprt-spacer" data-desktop="40" data-mobi="30" data-smobi="30"></div>
                                 </div><!-- /.col-md-12 -->
                                 @foreach ($services as $service)
                                     <div class="col-md-4">
@@ -141,6 +148,7 @@
                     </section>
 
                     <!-- FACTS -->
+                    
                     <section id="facts" class="wprt-section parallax">
                         <div class="container">
                             <div class="row">
@@ -194,18 +202,21 @@
                     </section>
 
                     <!-- WORKS -->
+                    @if (count($projects) > 0)
                     <section id="works" class="wprt-section">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="wprt-spacer" data-desktop="100" data-mobi="40" data-smobi="40"></div>
-
-                                    <h2 class="text-center margin-bottom-20">RECENT WORKS</h2>
+                                    <h2 class="text-center margin-bottom-20">{{ Str::upper($settings->project_title) }}</h2>
                                     <div class="wprt-lines style-2 custom-1">
                                         <div class="line-1"></div>
                                     </div>
 
                                     <div class="wprt-spacer" data-desktop="36" data-mobi="30" data-smobi="30"></div>
+
+                                    <p class="wprt-subtitle">{{ $settings->project_sub_title }}</p>
+                                    <div class="wprt-spacer" data-desktop="40" data-mobi="30" data-smobi="30"></div>
                                 </div><!-- /.col-md-12 -->
                             </div><!-- /.row -->
                         </div><!-- /.container -->
@@ -256,7 +267,7 @@
                                         </div>
                                     </div>
                                 @empty
-                                    <p class="text-center">No {{ $project->type->name }} Project Found</p>
+                                    <p class="text-center">No  Project Found</p>
                                 @endforelse
                                 <!--/.cbp-item -->
 
@@ -270,6 +281,10 @@
 
 
                     </section>
+                    @else
+                    <p class="text-center">No  Project  Found</p>
+                    @endif
+                    
 
                     <!-- OFFER -->
                     {{-- <section id="features" class="wprt-section">
@@ -420,14 +435,16 @@
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="wprt-spacer" data-desktop="8" data-mobi="0" data-smobi="0"></div>
-                                    <h2 class="text-white text-center-mobile font-size-20 margin-bottom-0">Contractors &
-                                        Construction Managers Since 1981</h2>
+                                    <h2 class="text-white text-center-mobile font-size-20 margin-bottom-0">{{ $settings->call_to_action_one_title }}</h2>
                                     <div class="wprt-spacer" data-desktop="0" data-mobi="20" data-smobi="20"></div>
                                 </div><!-- /.col-md-8 -->
 
                                 <div class="col-md-4">
-                                    <div class="text-right text-center-mobile"><a href="#"
-                                            class="wprt-button white rounded-3px">GET A QUOTE</a></div>
+                                    <div class="text-right text-center-mobile">
+                                        @if ($settings->call_to_action_one_button_title)
+                                        <a href="{{ $settings->call_to_action_one_button_url }}" class="wprt-button white rounded-3px">{{ $settings->call_to_action_one_button_title }}</a>
+                                        @endif
+                                    </div>
                                 </div><!-- /.col-md-4 -->
 
                             </div><!-- /.row -->
@@ -435,22 +452,20 @@
                     </section>
 
                     <!-- TESTIMONIALS -->
-
+                    @if (count($testimonials) > 0)
                     <section id="testimonials" class="wprt-section">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="wprt-spacer" data-desktop="100" data-mobi="40" data-smobi="40"></div>
-                                    <h2 class="text-center margin-bottom-20">WHAT OTHER SAY ABOUT US</h2>
+                                    <h2 class="text-center margin-bottom-20">{{ Str::upper($settings->testimonial_title) }}</h2>
                                     <div class="wprt-lines style-2 custom-1">
                                         <div class="line-1"></div>
                                     </div>
 
                                     <div class="wprt-spacer" data-desktop="36" data-mobi="30" data-smobi="30"></div>
 
-                                    <p class="wprt-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Phasellus sit amet iaculis elit. Nam semper ut arcu non placerat. Praesent nibh
-                                        massa varius.</p>
+                                    <p class="wprt-subtitle">{{$settings->testimonial_sub_title}}</p>
                                     <div class="wprt-spacer" data-desktop="40" data-mobi="30" data-smobi="30"></div>
                                 </div><!-- /.col-md-12 -->
 
@@ -459,6 +474,7 @@
                                         data-layout="slider" data-column="3" data-column2="3" data-column3="2"
                                         data-column4="1" data-gaph="30" data-gapv="30">
                                         <div id="testimonials-wrap" class="cbp">
+                                           
                                             @foreach ($testimonials as $testimonial)
                                                 <div class="cbp-item">
                                                     <div class="customer clearfix">
@@ -485,6 +501,7 @@
                                                     </div>
                                                 </div><!-- /.cbp-item -->
                                             @endforeach
+                                            
 
                                         </div><!-- /#service-wrap -->
                                     </div><!-- /.wprt-testimonials -->
@@ -494,13 +511,16 @@
                             </div><!-- /.row -->
                         </div><!-- /.container -->
                     </section>
+                    @else
+                        <p class="text-center">No  Testimonial  Found</p>
+                    @endif
 
                     <!-- WHY US-->
                     <section id="why-us" class="wprt-section">
                         <div class="container-fluid no-padding">
                             <div class="row no-margin">
                                 <div class="col-md-6 no-padding">
-                                    <img src="{{ asset('/') }}assets/frontend/assets/img/group.jpg" alt="image">
+                                    <img src="{{ asset('storage/' . $settings->why_choose_us_image) }}" alt="{{ config('app.name', 'Laravel') }}-why choose us">
                                 </div><!-- /.col-md-6 -->
 
                                 <div class="col-md-6 no-padding">
@@ -524,23 +544,22 @@
                             </div><!-- /.row -->
                         </div><!-- /.container-fluid -->
                     </section>
-
+                    
                     <!-- TEAM -->
+                    @if (count($teams) > 0)
                     <section id="team" class="wprt-section">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="wprt-spacer" data-desktop="100" data-mobi="40" data-smobi="40"></div>
-                                    <h2 class="text-center margin-bottom-20">OUR TEAM</h2>
+                                    <h2 class="text-center margin-bottom-20">{{ Str::upper($settings->team_title) }}</h2>
                                     <div class="wprt-lines style-2 custom-1">
                                         <div class="line-1"></div>
                                     </div>
 
                                     <div class="wprt-spacer" data-desktop="36" data-mobi="30" data-smobi="30"></div>
 
-                                    <p class="wprt-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Phasellus sit amet iaculis elit. Nam semper ut arcu non placerat. Praesent nibh
-                                        massa varius.</p>
+                                    <p class="wprt-subtitle">{{ $settings->team_sub_title }}</p>
 
                                     <div class="wprt-spacer" data-desktop="40" data-mobi="30" data-smobi="30"></div>
 
@@ -554,7 +573,7 @@
                                                     <div class="member">
                                                         <div class="inner">
                                                             <div class="image">
-                                                                @if ($testimonial->photo)
+                                                                @if ($team->photo)
                                                                     <div class="inner">
                                                                         <img src="{{ asset('storage/' . $team->photo) }}"
                                                                             alt="{{ $team->name }} - {{ config('app.name', 'Laravel') }}" />
@@ -603,8 +622,12 @@
                             </div><!-- /.row -->
                         </div><!-- /.container -->
                     </section>
+                    @else
+                        <p class="text-center">No  Team  Found</p>
+                    @endif
 
                     <!-- PARTNERS -->
+                    @if (count($partners) > 0)
                     <section id="partners" class="wprt-section">
                         <div class="container">
                             <div class="row">
@@ -613,47 +636,17 @@
 
                                     <div class="wprt-partners">
                                         <div class="owl-carousel">
-                                            <div class="partner">
-                                                <a target="_blank" href="#"><img
-                                                        src="{{ asset('/') }}assets/frontend/assets/img/partners/1.png"
-                                                        alt="image" /></a>
-                                            </div>
+                                            
+                                                @foreach ($partners as $partner)
+                                                    <div class="partner">
+                                                        <a target="_blank" href="{{$partner->company_url}}"><img
+                                                                src="{{ asset('storage/' . $partner->photo) }}"
+                                                                alt="{{ $partner->name }} - {{ config('app.name', 'Laravel') }}" /></a>
+                                                    </div>
+                                                @endforeach
+                                                    
 
-                                            <div class="partner">
-                                                <a target="_blank" href="#"><img
-                                                        src="{{ asset('/') }}assets/frontend/assets/img/partners/2.png"
-                                                        alt="image" /></a>
-                                            </div>
-
-                                            <div class="partner">
-                                                <a target="_blank" href="#"><img
-                                                        src="{{ asset('/') }}assets/frontend/assets/img/partners/3.png"
-                                                        alt="image" /></a>
-                                            </div>
-
-                                            <div class="partner">
-                                                <a target="_blank" href="#"><img
-                                                        src="{{ asset('/') }}assets/frontend/assets/img/partners/4.png"
-                                                        alt="image" /></a>
-                                            </div>
-
-                                            <div class="partner">
-                                                <a target="_blank" href="#"><img
-                                                        src="{{ asset('/') }}assets/frontend/assets/img/partners/5.png"
-                                                        alt="image" /></a>
-                                            </div>
-
-                                            <div class="partner">
-                                                <a target="_blank" href="#"><img
-                                                        src="{{ asset('/') }}assets/frontend/assets/img/partners/1.png"
-                                                        alt="image" /></a>
-                                            </div>
-
-                                            <div class="partner">
-                                                <a target="_blank" href="#"><img
-                                                        src="{{ asset('/') }}assets/frontend/assets/img/partners/2.png"
-                                                        alt="image" /></a>
-                                            </div>
+                                            
                                         </div>
                                     </div><!-- /.wprt-partners -->
 
@@ -663,6 +656,9 @@
                             </div><!-- /.row -->
                         </div><!-- /.container -->
                     </section>
+                    @else
+                        <p class="text-center">No  Business Partner Found</p>
+                    @endif
                 </div><!-- /.page-content -->
             </div>
         </div>

@@ -34,6 +34,7 @@ class SettingController extends Controller
         $this->validate($request, [
             'logo' => 'image|mimes:jpeg,png,jpg,gif,svg',
             'breadcrub_image' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'why_choose_us_image' => 'image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         $data = $request->all();
@@ -54,6 +55,15 @@ class SettingController extends Controller
             }
             
             $data['breadcrub_image'] = $request->file('breadcrub_image')->store('setting');
+        }
+
+        if ($request->hasFile('why_choose_us_image')) {
+
+            if (Storage::exists($setting->why_choose_us_image)) {
+                Storage::delete($setting->why_choose_us_image);
+            }
+            
+            $data['why_choose_us_image'] = $request->file('why_choose_us_image')->store('setting');
         }
 
         $setting->update($data);

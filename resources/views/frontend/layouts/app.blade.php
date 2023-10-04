@@ -22,7 +22,49 @@
     <link rel="shortcut icon" href="{{ asset('/') }}assets/frontend/assets/icon/favicon.png">
     <link rel="apple-touch-icon-precomposed"
         href="{{ asset('/') }}assets/frontend/assets/icon/apple-touch-icon-158-precomposed.png">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+         .m {
+	padding: 10px;
+	font-size: 18px;
+	width: 35px;
+	text-align: center;
+	text-decoration: none;
+	margin: 3px 1px;
+    border-radius: 50%;
+  } 
+  
+  .fa:hover {
+	  opacity: 0.7;
+  }
+  
+  .fa-facebook {
+	background: #3B5998;
+	color: white;
+  }
+  
+  .fa-twitter {
+	background: #55ACEE;
+	color: white;
+  }
+  
+ 
+  
+  .fa-linkedin {
+	background: #007bb5;
+	color: white;
+  }
+  
+  .fa-youtube {
+	background: #bb0000;
+	color: white;
+  }
+  .fa-instagram {
+  background: #125688;
+  color: white;
+}
+  
+    </style>
 </head>
 
 <body class="front-page no-sidebar site-layout-full-width menu-has-cart header-sticky header-style-5">
@@ -167,10 +209,29 @@
                                         @if ($settings->mobile)
                                             <li class="phone item"><a href="">{{ $settings->mobile }}</a></li>
                                         @endif
+                                        @if ($settings->mobile_1)
+                                            <li class="phone item"><a href="">{{ $settings->mobile_1 }}</a></li>
+                                        @endif
                                         @if ($settings->email)
                                             <li class="email item"><a
                                                     href="mailto:mail@example.com">{{ $settings->email }}</a></li>
                                         @endif
+                                        @if ($settings->facebook_url)
+                                            <a href="{{ $settings->facebook_url }}"  target="_blank" class="m fa fa-facebook"></a>
+                                        @endif
+                                        @if ($settings->twitter_url)
+                                            <a href="{{ $settings->twitter_url }}"  target="_blank" class="m fa fa-twitter"></a>
+                                        @endif
+                                        @if ($settings->linkedin_url)
+                                            <a href="{{ $settings->linkedin_url }}"  target="_blank" class="m fa fa-linkedin"></a>
+                                        @endif
+                                        @if ($settings->youtube_url)
+                                            <a href="{{ $settings->youtube_url }}"  target="_blank" class="m fa fa-youtube"></a>
+                                        @endif
+                                        @if ($settings->instagram_url)
+                                            <a href="{{ $settings->instagram_url }}"  target="_blank" class="m fa fa-instagram"></a>
+                                        @endif
+                                        
                                     </ul>
                             </div>
                         </div>

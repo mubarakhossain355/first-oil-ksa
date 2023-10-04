@@ -60,6 +60,7 @@ Route::group(['as'=>'admin.', 'prefix'=>'admin', 'middleware'=>['auth']], functi
     Route::resource('team', App\Http\Controllers\Backend\TeamController::class);
     Route::resource('serviceCategory', App\Http\Controllers\Backend\ServiceCategoryController::class);
     Route::resource('service', App\Http\Controllers\Backend\ServiceController::class);
+    Route::resource('partner', App\Http\Controllers\Backend\PartnerController::class);
 
     Route::get('client-requirement/{clientRequirement}', [App\Http\Controllers\Backend\ClientRequirementController::class, 'updateStatus'])->name('client-requirement.status.update');
     Route::get('client-requirement', [App\Http\Controllers\Backend\ClientRequirementController::class, 'index'])->name('client-requirement.index');

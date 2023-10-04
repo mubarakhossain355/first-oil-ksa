@@ -7,59 +7,98 @@
     @endpush
 
 @section('content')
-    <section
-        style="margin: 0; background-image: url({{ asset('storage/' . $settings->breadcrub_image) }});background-attachment: fixed;background-size: cover;background-position: center;background-repeat: no-repeat;"
-        class="page-header page-header-modern bg-color-light-scale-1 page-header-lg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 align-self-center p-static order-2 text-center">
-                    <h1 class="font-weight-bold text-light ">Contact Us</h1>
-                </div>
-                <div class="col-md-12 align-self-center order-1">
-                    <ul class="breadcrumb d-block text-center text-light">
-                        <li><a class="text-light" href="{{ route('home') }}">Home</a></li>
-                        <li class="active">Contact Us</li>
-                    </ul>
+
+    <!-- Featured Title -->
+<div style="background: url({{ asset('storage/' . $settings->breadcrub_image) }})" id="featured-title" class="clearfix featured-title-left">
+    <div id="featured-title-inner" class="container clearfix">
+        <div class="featured-title-inner-wrap">
+            <div class="featured-title-heading-wrap">
+                <h1 class="featured-title-heading">Contact US</h1>
+            </div>
+            <div id="breadcrumbs">
+                <div class="breadcrumbs-inner">
+                    <div class="breadcrumb-trail">
+                        <a href="{{route('home')}}"  rel="home" class="trail-begin">Home</a>
+                        <span class="sep">/</span>
+                        <span class="trail-end">Contact US</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
 
-    <section>
-        <div>
-            {!! $settings->office_location_map !!}
-        </div>
-    </section>
+<div id="content-wrap">
+    <div id="site-content" class="site-content clearfix">
+        <div id="inner-content" class="inner-content-wrap">
+            <div class="page-content">
+                <section class="wprt-section">
+                    <div >
+                        <div class="row">
+                           
+                                {!! $settings->office_location_map !!}
+                           
+                           
+                        </div>
+                       
+                    </div>
+                    <div class="wprt-spacer" data-desktop="100" data-mobi="60" data-smobi="60"></div>
 
-    <section class="section border-0 m-0 pb-3 appear-animation" data-appear-animation="fadeInUp"
-        data-appear-animation-delay="0" data-appear-animation-duration="1s">
-        <div class="container">
-            <div class="row py-4">
-                <div class="col-lg-6">
-                    <h2 class="font-weight-bold text-8 mt-2 mb-0">Contact Us</h2>
-                    <p class="mb-4">Feel free to ask for details, don't save any questions!</p>
-                    <form class="contact-form-recaptcha-v3" action="{{ route('contact.us.store') }}" method="POST"
-                        novalidate="novalidate">
-                        @csrf
-                        @if (session('message'))
-                            <div class="alert alert-success">
-                                {!! session('message') !!}
-                            </div>
-                        @endif
-                        <div class="form-row">
-                            <div class="form-group col-lg-6">
-                                <label class="mb-1 text-2">Full Name</label>
-                                <input type="text" value="{{ old('name') }}" maxlength="100"
-                                    class="form-control text-3 h-auto py-2 @error('name') is-invalid @enderror" name="name"
-                                    required="">
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <div class="form-group col-lg-6">
-                                <label class="mb-1 text-2">Email Address</label>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2 class="text-center margin-bottom-20">{{ Str::upper($settings->contact_us_title) }}</h2>
+                                <div class="wprt-lines style-2 custom-1">
+                                    <div class="line-1"></div>
+                                </div>
+
+                                <div class="wprt-spacer" data-desktop="36" data-mobi="30" data-smobi="30"></div>
+
+                                <p class="wprt-subtitle">{{ $settings->contact_us_sub_title }}</p>
+                                <div class="wprt-spacer" data-desktop="40" data-mobi="30" data-smobi="30"></div>
+                            </div><!-- /.col-md-12 -->
+
+                            <div class="col-md-4">
+                                <h5>Address</h5>
+                                <p>{{ $settings->company_address }}</p>
+
+                                <div class="wprt-spacer" data-desktop="15" data-mobi="0" data-smobi="0"></div>
+
+                                <h5>Phone number</h5>
+                                <p> {{ $settings->mobile }}</p>
+
+                                <div class="wprt-spacer" data-desktop="15" data-mobi="0" data-smobi="0"></div>
+
+                                <h5>E-mail address</h5>
+                                <p> <a style="color: black" href="mailto:info@firstoilksa.com">{{ $settings->email }}</a></p>
+
+                                <div class="wprt-spacer" data-desktop="0" data-mobi="10" data-smobi="10"></div>
+                            </div><!-- /.col-md-4 -->
+
+                            <div class="col-md-8">
+                                <form class="wprt-contact-form" action="{{ route('contact.us.store') }}" method="POST"
+                                novalidate="novalidate">
+                                @csrf
+                                @if (session('message'))
+                                    <div class="alert alert-success">
+                                        {!! session('message') !!}
+                                    </div>
+                                @endif
+                                    <div class="inner">
+                                        <div class="left-side">
+                                            <div class="input-wrap">
+                                                <label class="mb-1 text-2">Full Name</label>
+                                                <input type="text" value="{{ old('name') }}" maxlength="100"
+                                                    class="form-control text-3 h-auto py-2 @error('name') is-invalid @enderror" name="name"
+                                                    required="">
+                                                @error('name')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+                                            <div class="input-wrap">
+                                                <label class="mb-1 text-2">Email Address</label>
                                 <input type="email" value="{{ old('email') }}" maxlength="100"
                                     class="form-control text-3 h-auto py-2 @error('email') is-invalid @enderror"
                                     name="email" required="">
@@ -68,11 +107,9 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col">
-                                <label class="mb-1 text-2">Mobile</label>
+                                            </div>
+                                            <div class="input-wrap">
+                                                <label class="mb-1 text-2">Mobile</label>
                                 <input type="text" value="{{ old('contact_number') }}" maxlength="100"
                                     class="@error('contact_number') is-invalid @enderror form-control text-3 h-auto py-2"
                                     name="contact_number" required="">
@@ -81,18 +118,14 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col">
-                                <label class="mb-1 text-2">Subject</label>
+                                            </div>
+                                            <div class="input-wrap">
+                                                <label class="mb-1 text-2">Subject</label>
                                 <input type="text" value="{{ old('subject') }}" maxlength="100"
                                     class="form-control text-3 h-auto py-2" name="subject" required="">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col">
-                                <label class="mb-1 text-2">Message</label>
+                                            </div>
+                                            <div class="message-wrap">
+                                                <label class="mb-1 text-2">Message</label>
                                 <textarea maxlength="5000" rows="5"
                                     class="form-control text-3 h-auto py-2 @error('message') is-invalid @enderror"
                                     name="message" required="">{{ old('message') }}</textarea>
@@ -101,69 +134,27 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col">
-                                <input type="submit" value="Send Message" class="btn btn-primary btn-modern"
-                                    data-loading-text="Loading...">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-lg-6">
-                    <div class="appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn"
-                        data-appear-animation-delay="800" style="animation-delay: 800ms;">
-                        <h4 class="mt-2 mb-1">Our <strong>Office</strong></h4>
-                        <ul class="list list-icons list-icons-style-2 mt-2">
-                            <li><i class="fas fa-map-marker-alt top-6"></i> <strong class="text-dark">Address:</strong>
-                                {{ $settings->company_address }}</li>
-                            <li><i class="fas fa-phone top-6"></i> <strong class="text-dark">Phone:</strong>
-                                {{ $settings->mobile }}
-                            </li>
-                            <li><i class="fas fa-envelope top-6"></i> <strong class="text-dark">Email:</strong> <a
-                                    href="mailto:mail@example.com">{{ $settings->email }}</a></li>
-                        </ul>
-                    </div>
-                    <h4 class="pt-5">Get in <strong>Touch</strong></h4>
-                    <p class="lead mb-0 text-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo
-                        at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elit.</p>
+                                            </div>
+                                            <div class="send-wrap">
+                                                <input type="submit" value="SEND MESSAGE" id="submit" name="submit" class="submit">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form><!-- /.wprt-contact-form -->
+                            </div><!-- /.col-md-8 -->
 
-                    <ul class="footer-social-icons social-icons mt-4">
-                        <li class="social-icons-facebook"><a href="#" target="_blank" title="Facebook"><i
-                                    class="fab fa-facebook-f"></i></a></li>
-                        <li class="social-icons-twitter"><a href="#" target="_blank" title="Twitter"><i
-                                    class="fab fa-twitter"></i></a></li>
-                        <li class="social-icons-linkedin"><a href="#" target="_blank" title="Linkedin"><i
-                                    class="fab fa-linkedin-in"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+                            <div class="col-md-12">
+                                <div class="wprt-spacer" data-desktop="100" data-mobi="60" data-smobi="60"></div>
+                            </div><!-- /.col-md-12 -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container -->
+                </section>
 
-    <section class="call-to-action button-centered appear-animation" data-appear-animation="fadeInUp"
-        data-appear-animation-delay="0" data-appear-animation-duration="1s">
-        <div class="col-12">
-            <div class="call-to-action-content">
-                <h3>{{ $settings->call_to_action_two_title }}</h3>
+                
             </div>
         </div>
-        <div class="col-12">
-            <div class="call-to-action-btn">
-                @if ($settings->call_to_action_two_button_one_title)
-                    <a href="{{ $settings->call_to_action_two_button_one_url }}" target="_blank"
-                        class="btn btn-modern text-2 btn-primary">{{ $settings->call_to_action_two_button_one_title }}</a>
-                @endif
-                @if ($settings->call_to_action_two_button_two_title)
-                    <a href="{{ $settings->call_to_action_two_button_two_url }}" target="_blank"
-                        class="btn btn-modern text-2 btn-primary">{{ $settings->call_to_action_two_button_two_title }}</a>
-                @endif
-            </div>
-        </div>
-    </section>
+    </div>
+</div>
 @endsection
 
 @push('script')

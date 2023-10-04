@@ -843,7 +843,7 @@ p.dropcap span.first-letter { font-size: 55px; float: left; color: #ffc925; text
 
 /* Featured Title
 -------------------------------------------------------------- */
-#featured-title { background: url('assets/img/breadcrumb/breadcrumb.jpg'); border-style: solid; border-width: 1px 0; border-color: #f1f1f1; }
+#featured-title {  border-style: solid; border-width: 1px 0; border-color: #f1f1f1; }
 #featured-title .featured-title-inner-wrap { padding: 52px 0; display: table; overflow: hidden; width: 100%; }
 #featured-title .featured-title-heading-wrap { display: table-cell; margin: 0; text-align: left; vertical-align: middle; width: 65%;}
 #featured-title #breadcrumbs { font-size: 0.928em; display: table-cell; text-align: right; vertical-align: middle; width: 35%;}
@@ -1570,6 +1570,9 @@ body.page #main-content { padding-top: 10; padding-bottom: 0; }
 @media only screen and (max-width: 479px) {
 	#top-bar { display: none; }
 }
+
+/* Share Start */
+
 
 /* Retina Devices
 -------------------------------------------------------------- */

@@ -7,7 +7,7 @@
 
 @section('content')
     <!-- Featured Title -->
-    <div id="featured-title" class="clearfix featured-title-left">
+    <div style="background: url({{ asset('storage/' . $settings->breadcrub_image) }})" id="featured-title" class="clearfix featured-title-left">
         <div id="featured-title-inner" class="container clearfix">
             <div class="featured-title-inner-wrap">
                 <div class="featured-title-heading-wrap">
@@ -59,6 +59,7 @@
                                     </div><!-- /.col-md-12 -->
                                     <div class="col-md-12">
                                         <div class="table-responsive table-bordered">
+                                            @if(count($careers)>0)
                                             <table class="table">
                                                 <thead>
                                                     <tr>
@@ -71,7 +72,7 @@
 
                                                 </thead>
                                                 <tbody>
-                                                    @forelse ($careers as $career)
+                                                    @foreach ($careers as $career)
                                                         <tr>
                                                             <td style="width: 5%;overflow-y: hidden">{{ $loop->iteration }}
                                                             </td>
@@ -86,12 +87,13 @@
                                                                     href="{{ route('career.details', [$career->id, Str::slug($career->job_title)]) }}">Details</a>
                                                             </td>
                                                         </tr>
-                                                    @empty
-                                                        <p class="text-center">No position is open now</p>
-                                                    @endforelse
+                                                    @endforeach
 
                                                 </tbody>
                                             </table>
+                                            @else
+                                                <h6 class="text-center">No position is open now</h6>
+                                            @endif
                                         </div>
                                     </div>
 
